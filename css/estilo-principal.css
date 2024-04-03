@@ -7,18 +7,29 @@ body {
 h1 {
     text-align: center;
 }
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(20, 130, 93);
+    padding-left: 150px;
+}
 
 .navegacion {
     color: rgb(255, 255, 255);
     text-align: right;
-    padding-right: 60px;
+    padding-right: 150px;
     text-decoration: none;
 }
 
 .barra-navegaion {
     text-align: right;
-    background-color: rgb(20, 130, 93);
     padding-top: 40px;
     padding-bottom: 40px;
 }
 
+.logo-ecocashback {
+    background-color: white;
+    width: 130px; /* Ajusta este valor según tus necesidades */
+    height: 130px; /* Ajusta este valor según tus necesidades */
+}   
