@@ -1,15 +1,24 @@
-h1{
+body {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
     text-align: center;
 }
-.navegacion{
+
+.navegacion {
     color: rgb(255, 255, 255);
     text-align: right;
     padding-right: 60px;
     text-decoration: none;
 }
-.barra-navegaion{
+
+.barra-navegaion {
     text-align: right;
     background-color: rgb(20, 130, 93);
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
+
