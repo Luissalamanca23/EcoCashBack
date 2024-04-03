@@ -2,6 +2,14 @@ h1{
     text-align: center;
 }
 .navegacion{
-    color: black;
+    color: rgb(255, 255, 255);
     text-align: right;
+    padding-right: 60px;
+    text-decoration: none;
+}
+.barra-navegaion{
+    text-align: right;
+    background-color: rgb(20, 130, 93);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
