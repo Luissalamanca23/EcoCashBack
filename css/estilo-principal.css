@@ -1,44 +1,62 @@
-body{
+:root{
+    --verde: rgb(8, 165, 112);
+    --blanco: white;
+    --oscuro: black;
+
+}
+
+
+body {
     border: none;
     margin: 0;
 }
-
-h1 {
-    text-align: center;
-}
-
-header {
+.header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: rgb(20, 130, 93);
-    padding-left: 150px;
+    justify-content: space-between;
 }
 
+.nav-bg {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: var(--verde);
+}
 
-
-.navegacion {
-    color: rgb(255, 255, 255);
+.navegacion-principal {
     text-align: right;
-    padding-right: 60px;
-    padding-right: 150px;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        /* ordenar elementos orisontalmente */
+    }
+}
+
+.navegacion-principal a {
+    text-align: center;
+    padding-right: 90px;
+    color: var(--blanco);
     text-decoration: none;
+    font-size: 20px;
+    font-weight: 700; 
 }
 
-
-
-.barra-navegaion {
-    text-align: right;
-    background-color: rgb(20, 130, 93);
-    padding-top: 40px;
-    padding-bottom: 40px;
+.navegacion-principal a{
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+.navegacion-principal a:hover {
+    background-color: var(--blanco);
+    color: var(--oscuro);
+}
 
 
 .logo-ecocashback {
+    border-radius: 20px;
     background-color: white;
-    width: 130px; /* Ajusta este valor según tus necesidades */
-    height: 130px; /* Ajusta este valor según tus necesidades */
+    width: 100px;
+    height: 100px;
 
 }
