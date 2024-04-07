@@ -43,7 +43,7 @@ body {
     }
 }
 
-.navegacion-principal a {
+.navegacion a {
     padding: 5px;
     color: var(--blanco);
     text-decoration: none;
@@ -52,11 +52,7 @@ body {
     border-radius: 9px;
 }
 
-.navegacion-principal{
-    padding: auto;
-}
-
-.navegacion-principal a{
+.navegacion a{
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
@@ -71,16 +67,16 @@ body {
     background-color: white;
     width: 100px;
     height: 100px;
-
 }
 
-.navegacion{
-    display: inline-block;
+.navegacion a{
+    padding: 20px;
 }
 
 /*Fin estilo barra de navegacion*/
 
 /* Estilo carrusel */
+
 
 .titulo{
     text-align: center;
@@ -117,7 +113,7 @@ body {
 }
 
 .texto h2{
-    font-size: 45px;
+    font-size: 40px;
     margin-bottom: 35px;
 }
 
@@ -159,3 +155,56 @@ body {
     }
 }
 
+/* Footer */
+
+footer {
+    background-color: var(--verde);
+    color: #fff;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.footer-section a:hover {
+    background-color: #a0c6a2;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    color: #ddd;    
+}
+
+.footer-section-izq,
+.footer-section-der {
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.footer-section-izq {
+    float: left;
+    padding-right: 10px;
+}
+
+.footer-section-der {
+    float: right;
+    padding-left: 10px;
+}
+
+/* Asegúrate de limpiar los floats */
+footer::after {
+    content: "";
+    display: table;
+    clear: both;
+}
