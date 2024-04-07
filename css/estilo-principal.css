@@ -11,24 +11,18 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
-    text-align: center;
-
-}
-
 body {
     background-color: var(--gris);
+    padding-top: 20px;
 }
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+header{
+    display: block;
 }
 
 /*Estilo barra de navegacion*/
 
-.nav-bg {
-    padding-left: 150px;
+.container {
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: var(--verde);
@@ -36,14 +30,14 @@ body {
 
 
 @media (min-width: 768px) {
-    .navegacion-principal {
-        flex-direction: row;
+    .container {
+        flex-direction: column;
         justify-content: space-between;
         
     }
 }
 
-.navegacion-principal a {
+.col a {
     padding: 5px;
     color: var(--blanco);
     text-decoration: none;
@@ -52,35 +46,38 @@ body {
     border-radius: 9px;
 }
 
-.navegacion-principal{
-    padding: auto;
-}
-
-.navegacion-principal a{
+.col a{
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.navegacion-principal a:hover {
+col a:hover {
     background-color: var(--blanco);
     color: var(--oscuro);
 }
 
 
 .logo-ecocashback {
+    
     border-radius: 20px;
     background-color: white;
     width: 100px;
     height: 100px;
-
 }
 
-.navegacion{
-    display: inline-block;
+.col a{
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /*Fin estilo barra de navegacion*/
 
 /* Estilo carrusel */
+
 
 .titulo{
     text-align: center;
@@ -117,7 +114,7 @@ body {
 }
 
 .texto h2{
-    font-size: 45px;
+    font-size: 40px;
     margin-bottom: 35px;
 }
 
@@ -159,3 +156,30 @@ body {
     }
 }
 
+/* Footer */
+
+footer {
+    background-color: var(--verde);
+}
+
+footer .derechos {
+    color: var(--blanco);
+    text-align: center;
+}
+
+footer p {
+    color: var(--blanco);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+footer .footer-link-nombre {
+    align-self: flex-start !important;
+    padding-top: 0px;
+}
