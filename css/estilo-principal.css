@@ -18,16 +18,16 @@ h1{
 
 body {
     background-color: var(--gris);
+    padding-top: 20px;
 }
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+header{
+    display: block;
 }
 
 /*Estilo barra de navegacion*/
 
-.nav-bg {
+.container {
     padding-left: 150px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -36,14 +36,14 @@ body {
 
 
 @media (min-width: 768px) {
-    .navegacion-principal {
-        flex-direction: row;
+    .container {
+        flex-direction: column;
         justify-content: space-between;
         
     }
 }
 
-.navegacion a {
+.col a {
     padding: 5px;
     color: var(--blanco);
     text-decoration: none;
@@ -52,25 +52,32 @@ body {
     border-radius: 9px;
 }
 
-.navegacion a{
+.col a{
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.navegacion-principal a:hover {
+col a:hover {
     background-color: var(--blanco);
     color: var(--oscuro);
 }
 
 
 .logo-ecocashback {
+    
     border-radius: 20px;
     background-color: white;
     width: 100px;
     height: 100px;
 }
 
-.navegacion a{
+.col a{
     padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /*Fin estilo barra de navegacion*/
@@ -164,8 +171,10 @@ footer {
     font-size: 14px;
 }
 
-.footer-section {
-    margin-bottom: 20px;
+.footer-section p{
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 20px;
 }
 
 .footer-section h3 {
@@ -173,14 +182,14 @@ footer {
     font-size: 18px;
 }
 
-.footer-section a {
+.footer-section-der a {
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
     padding: 10px;
 }
 
-.footer-section a:hover {
+.footer-section-der a:hover {
     background-color: #a0c6a2;
     transition: background-color 0.5s ease, color 0.5s ease;
     color: #ddd;    
