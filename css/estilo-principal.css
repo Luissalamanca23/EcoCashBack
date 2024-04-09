@@ -17,11 +17,14 @@ body {
     padding-top: 20px;
 }
 
-header{
-    display: block;
-}
 
 /*Estilo barra de navegacion*/
+
+header {
+    background-color: var(--crema);
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 .container {
     padding-top: 5px;
@@ -58,7 +61,6 @@ col a:hover {
 
 
 .logo-ecocashback {
-    
     border-radius: 20px;
     background-color: white;
     width: 100px;
@@ -68,6 +70,10 @@ col a:hover {
 .col a{
     padding: 5px;
     font-size: 3;
+}
+
+col{
+    padding: 0 0 !important;
 }
 
 .row {
