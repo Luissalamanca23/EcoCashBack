@@ -40,59 +40,53 @@
             </div>
         </div>
     </header>
-    <h2 class="titulo">Nuestra Historia</h2>
-    <div class="slider-box">
-        <ul>
-            <li>
-                <img src="fotos/img1.jpg" alt="Foto 1">
-                <div class="texto">
-                    <h2>Titulo 1</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quasi labore sint ducimus debitis temporibus eos, corporis
-                        recusandae expedita aut, in voluptatum laboriosam obcaecati nulla? Autem natus aspernatur fugiat
-                        veritatis ut?
-                    </p>
+
+    <div class="container">
+        <h2 class="titulo">Nuestra Historia</h2>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="fotos/img1.jpg" class="d-block w-100" alt="Foto 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titulo 1</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi labore sint ducimus debitis temporibus eos, corporis recusandae expedita aut, in voluptatum laboriosam obcaecati nulla? Autem natus aspernatur fugiat veritatis ut?</p>
+                    </div>
                 </div>
-            </li>
-            <li>
-                <img src="fotos/img2.jpg" alt="Foto 2">
-                <div class="texto">
-                    <h2>Titulo 2</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quasi labore sint ducimus debitis temporibus eos, corporis
-                        recusandae expedita aut, in voluptatum laboriosam obcaecati nulla? Autem natus aspernatur fugiat
-                        veritatis ut?
-                    </p>
+                <div class="carousel-item">
+                    <img src="fotos/img2.jpg" class="d-block w-100" alt="Foto 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titulo 2</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi labore sint ducimus debitis temporibus eos, corporis recusandae expedita aut, in voluptatum laboriosam obcaecati nulla? Autem natus aspernatur fugiat veritatis ut?</p>
+                    </div>
                 </div>
-            </li>
-            <li>
-                <img src="fotos/img3.jpg" alt="Foto 3">
-                <div class="texto">
-                    <h2>Titulo 3</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quasi labore sint ducimus debitis temporibus eos, corporis
-                        recusandae expedita aut, in voluptatum laboriosam obcaecati nulla? Autem natus aspernatur fugiat
-                        veritatis ut?
-                    </p>
+                <div class="carousel-item">
+                    <img src="fotos/img3.jpg" class="d-block w-100" alt="Foto 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titulo 3</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi labore sint ducimus debitis temporibus eos, corporis recusandae expedita aut, in voluptatum laboriosam obcaecati nulla? Autem natus aspernatur fugiat veritatis ut?</p>
+                    </div>
                 </div>
-            </li>
-            <li>
-                <img src="fotos/img4.jpg" alt="Foto 4">
-                <div class="texto">
-                    <h2>Titulo 4</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quasi labore sint ducimus debitis temporibus eos, corporis
-                        recusandae expedita aut, in voluptatum laboriosam obcaecati nulla? Autem natus aspernatur fugiat
-                        veritatis ut?
-                    </p>
+                <div class="carousel-item">
+                    <img src="fotos/img4.jpg" class="d-block w-100" alt="Foto 4">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Titulo 4</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi labore sint ducimus debitis temporibus eos, corporis recusandae expedita aut, in voluptatum laboriosam obcaecati nulla? Autem natus aspernatur fugiat veritatis ut?</p>
+                    </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
+
     <footer>
         <div class="conatiner-fluid">
             <div class="row p-5">
@@ -130,6 +124,13 @@
         </div>
         <p class="derechos">&copy; 2024 EcoCashBack - Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleControls'), {
+            interval: 5000, // Cambia la velocidad de transición del carrusel (en milisegundos)
+            wrap: true // Permite que el carrusel vuelva al principio después de la última diapositiva
+        });
+    </script>
 </body>
 
 </html>
