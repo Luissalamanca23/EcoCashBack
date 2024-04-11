@@ -93,76 +93,10 @@ col{
     padding-top: 50px;
 }
 
-.slider-box{
-    width: 1280px;
-    height: auto;
-    margin: 50px auto 0;
+.container-slider{
+    padding: 0 5%;
 }
 
-
-.slider-box ul{
-    display: flex;
-    padding: 0;
-    width: 400%;
-    animation: slide 20s infinite alternate ease-in-out;
-}
-
-.slider-box li{
-    width: 100%;
-    list-style: none;
-    position: relative;
-}
-
-.texto{
-    position: absolute;
-    text-align: center;
-    padding: 0 250px;
-    top: 250px;
-    color: var(--verde);
-}
-
-.texto h2{
-    font-size: 40px;
-    margin-bottom: 35px;
-}
-
-.slider-box img{
-    width: 100%;
-}
-
-@keyframes slide{   
-    0% {margin-left: 0%;}
-    20% {margin-left: 0%;}
-
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
-}
-
-@media(max-width:991px){
-    .slider-box{
-        width: 100%;
-    }
-    .texto{
-        top: 50px;
-        padding: 0 25px;
-    }
-
-    .texto h2{
-        font-size: 35px;
-        margin-bottom: 15px;
-    }
-
-    .texto p{
-        font-size: 1px;
-        padding-left: 30px;
-    }
-}
 
 /* Footer */
 
@@ -198,6 +132,18 @@ footer .footer-link-nombre {
     text-decoration: none;
 }
 
+.contenedor-secciones{
+    display: flex;
+}
+
+.eventos{
+    flex: 1.7;
+}
+
+.ccotiza-ubicacion{
+    flex: 0.3;
+
+}
 
 /* Estilo Eventos */
 
@@ -239,8 +185,8 @@ footer .footer-link-nombre {
     padding-top: 10px;
     border: 1px solid var(--verde);
     border-radius: 10px;
+    margin-bottom: 10px;
 }
-
 
 .evento .fecha-lugar{
     float: left;
@@ -254,7 +200,6 @@ footer .footer-link-nombre {
 .titulo-suscripcion-eventos p{
     text-align: center;
     padding-top: 10px;
-
 }
 
 .container-suscripcion-eventos {
@@ -291,4 +236,107 @@ footer .footer-link-nombre {
     background-color: #333;
     color: #fff;
     cursor: pointer;
+}
+
+/* Estilo Cotiza */
+
+.cotiza-ubicacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--verde);
+    border: 2px solid var(--verde);
+    border-radius: 10px;
+    width: 50%;
+    margin: 50px;
+    padding-bottom: 15px;
+}
+
+
+.container-cotiza h2 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.container-cotiza p{
+    text-align: center;
+    padding: 0 70px;
+}
+
+
+
+.container-cotiza .relleno-form{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--verde);
+    width: 40%;
+    box-sizing: border-box;
+}
+
+.form-top{
+    text-align: center;
+    padding: 10px;
+}
+
+.form-botton{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.font-textarea{
+    text-align: center;
+    padding: 0 100px;
+}
+
+.form-text{
+    padding-top: 10px;
+    text-align: center;
+}
+
+.container-cotiza .relleno-form{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--verde);
+    width: 40%;
+    box-sizing: border-box;
+}
+
+.container-cotiza .enviar-form{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--verde);
+    color: #fff;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    /*field-sizing: content;*/
+    width: 400px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid var(--verde);
+    box-sizing: border-box;
+}
+
+
+.container-ubicacion .mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* el resto de tus estilos */
+}
+
+.container-ubicacion h2 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 10px;
+}
+
+.container-ubicacion p{
+    text-align: center;
+    padding: 15px 70px;
 }
