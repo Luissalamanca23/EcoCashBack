@@ -1,342 +1,1 @@
-:root{
-    --verde: #003E2C;
-    --crema: #faf4f1;
-    --blanco: white;
-    --oscuro: black;
-    --gris: #f5f5f5
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    background-color: var(--gris);
-    padding-top: 20px;
-}
-
-
-/*Estilo barra de navegacion*/
-
-header {
-    background-color: var(--crema);
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.container {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: var(--crema);
-}
-
-
-@media (min-width: 768px) {
-    .container {
-        flex-direction: column;
-        justify-content: space-between;
-        
-    }
-}
-
-.col a {
-    padding: 5px;
-    color: var(--verde);
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 700; 
-    border-radius: 9px;
-}
-
-.col a{
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-col a:hover {
-    background-color: var(--verde);
-    color: var(--oscuro);
-}
-
-
-.logo-ecocashback {
-    border-radius: 20px;
-    background-color: white;
-    width: 100px;
-    height: 100px;
-}
-
-.col a{
-    padding: 5px;
-    font-size: 3;
-}
-
-col{
-    padding: 0 0 !important;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/*Fin estilo barra de navegacion*/
-
-/* Estilo carrusel */
-
-
-.titulo{
-    text-align: center;
-    font-size: 40px;
-    padding-top: 50px;
-}
-
-.container-slider{
-    padding: 0 5%;
-}
-
-
-/* Footer */
-
-footer {
-    background-color: var(--crema) !important;
-}
-
-footer .derechos {
-    color: var(--verde) !important;
-    text-align: center;
-}
-
-footer p {
-    color: var(--verde) !important;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-.footer-links{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-    color: var(--verde) !important;
-}
-
-footer .footer-link-nombre {
-    align-self: flex-start !important;
-    padding-top: 0px;
-}
-
-.footer-links a{
-    color: var(--verde) !important;
-    text-decoration: none;
-}
-
-.contenedor-secciones{
-    display: flex;
-}
-
-.eventos{
-    flex: 1.7;
-}
-
-.ccotiza-ubicacion{
-    flex: 0.3;
-
-}
-
-/* Estilo Eventos */
-
-
-.eventos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    color: var(--verde);
-    border: 2px solid var(--verde);
-    border-radius: 10px;
-    width: 50%;
-    margin: 50px;
-    padding-bottom: 15px;
-}
-
-.proximos-eventos{
-    padding-top: 10px;
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-bottom: 15px;
-}
-
-.eventos h2 {
-    text-align: center;
-    font-size: 40px;
-    padding-top: 10px;
-}
-.fechas-eventos{
-    padding-top: 15px;
-}
-
-.fechas-eventos .evento{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 10px;
-    border: 1px solid var(--verde);
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.evento .fecha-lugar{
-    float: left;
-    width: 97%;
-}
-
-.evento .descripcion{
-    float: left;
-    width: 96%;
-}
-.titulo-suscripcion-eventos p{
-    text-align: center;
-    padding-top: 10px;
-}
-
-.container-suscripcion-eventos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    background-color: var(--crema); /* Cambia esto a cualquier color que necesites */
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Esto añade un ligero sombreado alrededor del contenedor */
-}
-
-.form-suscripcion-eventos form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.form-suscripcion-eventos input[type="email"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.form-suscripcion-eventos form input[type="submit"] {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-}
-
-/* Estilo Cotiza */
-
-.cotiza-ubicacion{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    color: var(--verde);
-    border: 2px solid var(--verde);
-    border-radius: 10px;
-    width: 50%;
-    margin: 50px;
-    padding-bottom: 15px;
-}
-
-
-.container-cotiza h2 {
-    text-align: center;
-    font-size: 40px;
-    padding-top: 30px;
-    padding-bottom: 10px;
-}
-
-.container-cotiza p{
-    text-align: center;
-    padding: 0 70px;
-}
-
-
-
-.container-cotiza .relleno-form{
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--verde);
-    width: 40%;
-    box-sizing: border-box;
-}
-
-.form-top{
-    text-align: center;
-    padding: 10px;
-}
-
-.form-botton{
-    text-align: center;
-    padding-bottom: 10px;
-}
-.font-textarea{
-    text-align: center;
-    padding: 0 100px;
-}
-
-.form-text{
-    padding-top: 10px;
-    text-align: center;
-}
-
-.container-cotiza .relleno-form{
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--verde);
-    width: 40%;
-    box-sizing: border-box;
-}
-
-.container-cotiza .enviar-form{
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--verde);
-    color: #fff;
-    cursor: pointer;
-}
-
-textarea {
-    resize: none;
-    /*field-sizing: content;*/
-    width: 400px;
-    height: 50px;
-    border-radius: 5px;
-    border: 1px solid var(--verde);
-    box-sizing: border-box;
-}
-
-
-.container-ubicacion .mapa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* el resto de tus estilos */
-}
-
-.container-ubicacion h2 {
-    text-align: center;
-    font-size: 40px;
-    padding-top: 10px;
-}
-
-.container-ubicacion p{
-    text-align: center;
-    padding: 15px 70px;
-}
+:root{    --verde: #003E2C;    --crema: #faf4f1;    --blanco: white;    --oscuro: black;    --gris: #f5f5f5}*{    margin: 0;    padding: 0;    box-sizing: border-box;    font-family: Arial, Helvetica, sans-serif;}body {    background-color: var(--gris);}/*Estilo barra de navegacion*/header {    background-color: var(--crema);    padding: 10px;    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}.container {    padding-top: 5px;    padding-bottom: 5px;    background-color: var(--crema);}@media (min-width: 768px) {    .container {        flex-direction: column;        justify-content: space-between;            }}.col a {    padding: 5px;    color: var(--verde);    text-decoration: none;    font-size: 20px;    font-weight: 700;     border-radius: 9px;}.col a{    transition: background-color 0.7s ease, color 0.7s ease;}col a:hover {    background-color: var(--verde);    color: var(--oscuro);}.logo-ecocashback {    border-radius: 20px;    background-color: white;    width: 100px;    height: 100px;}.col a{    padding: 5px;    font-size: 20px;}col{    padding: 0 0 !important;}.row {    display: flex;    justify-content: space-between;    align-items: center;}/*Fin estilo barra de navegacion*//* Estilo carrusel */.titulo{    color: var(--verde);    text-align: center;    font-size: 40px;    padding-top: 50px;    padding-bottom: 30px;}.container-slider{    padding: 0 5%;}.carousel-item {    display: flex;    justify-content: center !important; /* Esto alinea los elementos horizontalmente en el centro */}.carousel-item .texto-carusel{    display: flex;    justify-content: center !important;    background-color: rgba(0, 128, 0, 0.7); /* 70% de transparencia */    border-radius: 20px;}.texto-carusel h5{    color: white;    padding: 10px;    font-size: 40px !important;    text-align: center;}.texto-carusel .parrafo-carusel{    color: white;    font-size: 17px;    text-align: center;    padding: 0 30px;    padding-bottom: 10px !important;}.texto-carusel a{    color: white;    text-decoration: none;    padding: 10px;    border: 1px solid white;    border-radius: 5px;}.texto-carusel a:hover{    background-color: white;    color: var(--verde);}/* Footer */footer {    background-color: var(--crema) !important;}footer .derechos {    color: var(--verde) !important;    text-align: center;}footer p {    color: var(--verde) !important;    text-align: center;    padding-bottom: 10px;}.footer-links{    display: flex;    justify-content: center;    padding-bottom: 10px;    color: var(--verde) !important;}footer .footer-link-nombre {    align-self: flex-start !important;}.footer-links a{    color: var(--verde) !important;    text-decoration: none;}.contenedor-secciones{    display: flex;}.eventos{    flex: 1.7;}.ccotiza-ubicacion{    flex: 0.3;}/* Estilo Eventos */.eventos {    display: flex;    justify-content: center;    align-items: center;    flex-wrap: wrap;    color: var(--verde);    border: 2px solid var(--verde);    border-radius: 10px;    width: 50%;    margin: 50px;    padding-bottom: 15px;}.proximos-eventos{    padding-top: 10px;    padding-left: 70px;    padding-right: 70px;    padding-bottom: 15px;}.eventos h2 {    text-align: center;    font-size: 40px;    padding-top: 10px;}.fechas-eventos{    padding-top: 15px;}.fechas-eventos .evento{    display: flex;    justify-content: center;    align-items: center;    flex-wrap: wrap;    padding-top: 10px;    border: 1px solid var(--verde);    border-radius: 10px;    margin-bottom: 10px;}.evento .fecha-lugar{    float: left;    width: 97%;}.evento .descripcion{    float: left;    width: 96%;}.titulo-suscripcion-eventos p{    text-align: center;    padding-top: 10px;}.container-suscripcion-eventos {    display: flex;    justify-content: center;    align-items: center;    flex-direction: column;    padding: 20px;    background-color: var(--crema); /* Cambia esto a cualquier color que necesites */    border-radius: 10px;    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Esto añade un ligero sombreado alrededor del contenedor */}.form-suscripcion-eventos form {    display: flex;    justify-content: center;    align-items: center;    flex-direction: column;    gap: 10px;}.form-suscripcion-eventos input[type="email"] {    padding: 10px;    border-radius: 5px;    border: 1px solid #ccc;    width: 100%;    box-sizing: border-box;}.form-suscripcion-eventos form input[type="submit"] {    padding: 10px 20px;    border-radius: 5px;    border: none;    background-color: #333;    color: #fff;    cursor: pointer;}/* Estilo Cotiza */.cotiza-ubicacion{    display: flex;    justify-content: center;    align-items: center;    flex-wrap: wrap;    color: var(--verde);    border: 2px solid var(--verde);    border-radius: 10px;    width: 50%;    margin: 50px;    padding-bottom: 15px;}.container-cotiza h2 {    text-align: center;    font-size: 40px;    padding-top: 30px;    padding-bottom: 10px;}.container-cotiza p{    text-align: center;    padding: 0 70px;}.container-cotiza .relleno-form{    padding: 10px;    border-radius: 5px;    border: 1px solid var(--verde);    width: 40%;    box-sizing: border-box;}.form-top{    text-align: center;    padding: 10px;}.form-botton{    text-align: center;    padding-bottom: 10px;}.font-textarea{    text-align: center;    padding: 0 100px;}.form-text{    padding-top: 10px;    text-align: center;}.container-cotiza .relleno-form{    padding: 10px;    border-radius: 5px;    border: 1px solid var(--verde);    width: 40%;    box-sizing: border-box;}.container-cotiza .enviar-form{    padding: 10px 20px;    border-radius: 5px;    border: none;    background-color: var(--verde);    color: #fff;    cursor: pointer;}textarea {    resize: none;    /*field-sizing: content;*/    width: 400px;    height: 50px;    border-radius: 5px;    border: 1px solid var(--verde);    box-sizing: border-box;}.container-ubicacion .mapa {    display: flex;    justify-content: center;    align-items: center;    /* el resto de tus estilos */}.container-ubicacion h2 {    text-align: center;    font-size: 40px;    padding-top: 10px;}.container-ubicacion p{    text-align: center;    padding: 15px 70px;}
