@@ -5,39 +5,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoCashBack</title>
+    <meta name="description"
+        content="EcoCashBack es una organización comprometida con la promoción del reciclaje y la sostenibilidad en nuestra comunidad.">
+    <link rel="icon" href="fotos/WhatsApp Image 2024-04-03 at 17.56.23.jpeg">
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilo-principal.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        <nav class="barra-navegaion">
-            <img class="logo-ecocashback" src="fotos/WhatsApp Image 2024-04-03 at 17.56.23.jpeg" alt="Logo-EcoCashBack">
-            <a class="navegacion" href="">Home</a>
-            <a class="navegacion" href="html/servicios.html">Servicios</a>
-            <a class="navegacion" href="html/contactanos.html">Contactanos</a>
-        </nav>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <img class="logo-ecocashback" src="fotos/WhatsApp Image 2024-04-03 at 17.56.23.jpeg"
+                        alt="Logo-EcoCashBack">
+                </div>
+                <div class="col">
+                    <a href="#">Inicio</a>
+                </div>
+                <div class="col">
+                    <a href="html/servicios.html">Servicios</a>
+                </div>
+                <div class="col">
+                    <a href="html/sobre-nosotros.html">Sobre Nosotros</a>
+                </div>
+                <div class="col">
+                    <a href="html/login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user icon-user-nav"
+                            width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
-    <h2>Misión</h2>
-    <p>Ser la plataforma líder en reciclaje que empodera a las personas para tomar el control de su propio reciclaje,
-        ofreciéndoles una experiencia cómoda, beneficiosa y ambientalmente responsable.</p>
-    <h2>Visión</h2>
-    <p>Transformar el panorama del reciclaje a través de un modelo innovador que incentive la participación activa de
-        las personas,
-        contribuyendo a un futuro más sostenible para el planeta.</p>
-    <h2>Valores Fundamentales:</h2>
-    <ul>
-        <li>Innovación: Buscamos constantemente nuevas soluciones para mejorar la experiencia del reciclaje.</li>
-        <li>Compromiso ambiental: Estamos comprometidos con la protección del medio ambiente y la promoción de la
-            sostenibilidad.</li>
-        <li>Enfoque en el cliente: Ofrecemos una experiencia personalizada y adaptable a las necesidades de cada
-            usuario.</li>
-        <li>Transparencia: Mantenemos una comunicación clara y abierta con nuestros usuarios sobre el proceso de
-            reciclaje y su impacto ambiental.</li>
-        <li>Responsabilidad social: Promovemos la inclusión y el desarrollo de las comunidades a través del reciclaje.
-        </li>
-    </ul>
-    <p>EcoCashBack se propone ser una fuerza impulsora en la transformación del sector del reciclaje, creando un futuro
-        más verde y próspero para todos.</p>
+    <div class="container-slider">
+        <h2 class="titulo">Nuestra Historia</h2>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="fotos/img1.jpg" class="d-block w-100" alt="Foto 1">
+                    <div class="carousel-caption d-none d-md-block texto-carusel">
+                        <h5>Nuestra Ubicacion</h5>
+                        <p class="parrafo-carusel">Nos encontramos en el corazón de Puerto Montt, una ciudad llena de
+                            vida y comprometida con el medio ambiente. Nuestra ubicación estratégica nos permite llegar
+                            a diferentes puntos de la ciudad y realizar nuestras actividades de recolección y reciclaje.
+                            Estamos siempre dispuestos a expandir nuestros horizontes y llegar a más lugares para seguir
+                            contribuyendo a un mundo más limpio y sostenible.</p>
+                        <a href="#ubicacion-ecocashback">Ir a Ubicacion</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="fotos/img2.jpg" class="d-block w-100" alt="Foto 2">
+                    <div class="carousel-caption d-none d-md-block texto-carusel">
+                        <h5>Sobre Nosotros</h5>
+                        <p class="parrafo-carusel">Somos EcoCashBack, una organización comprometida con la promoción del
+                            reciclaje y la sostenibilidad en nuestra comunidad. Nuestra misión es fomentar una cultura
+                            de reciclaje y conciencia ambiental, ofreciendo a las personas la oportunidad de obtener
+                            beneficios económicos a cambio de sus desechos reciclables. Creemos firmemente que cada
+                            pequeño acto de reciclaje puede tener un gran impacto en la salud de nuestro planeta.
+                            Juntos, podemos hacer de nuestro mundo un lugar más limpio y sostenible para las
+                            generaciones futuras.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="fotos/img3.jpg" class="d-block w-100" alt="Foto 3">
+                    <div class="carousel-caption d-none d-md-block texto-carusel">
+                        <h5>Cotiza con nosotros</h5>
+                        <p class="parrafo-carusel">En EcoCashBack, creemos en el valor de los desechos reciclables. Si
+                            tienes materiales reciclables y estás interesado en convertirlos en efectivo, te invitamos a
+                            cotizar con nosotros. Nuestro proceso de cotización es simple y transparente. Solo necesitas
+                            proporcionarnos detalles sobre los materiales que tienes y nosotros te proporcionaremos una
+                            estimación de cuánto podrías ganar. Recuerda, cada artículo reciclable cuenta. No solo
+                            estarás ganando dinero, sino que también estarás contribuyendo a un planeta más limpio y
+                            sostenible. ¡Cotiza con nosotros hoy!</p>
+                        <a href="#cotiza-ecocashback">Ir a proximos Eventos</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="fotos/img4.jpg" class="d-block w-100" alt="Foto 4">
+                    <div class="carousel-caption d-none d-md-block texto-carusel">
+                        <h5>Nuestros Eventos</h5>
+                        <p class="parrafo-carusel">Estamos emocionados de compartir que estamos planeando una serie de
+                            eventos comunitarios en los próximos meses. Estos eventos estarán enfocados en la educación
+                            ambiental y la promoción del reciclaje. Si estás interesado en aprender más sobre estos
+                            eventos y cómo puedes participar, por favor presiona el botón para obtener más información.
+                        </p>
+                        <a href="#eventos-ecocashback">Ir a proximos Eventos</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon button-slider" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon button-slider" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <section class="contenedor-secciones" id="eventos-ecocashback">
+        <article class="eventos">
+            <div class="proximos-eventos">
+                <h2>Proximos Eventos</h2>
+                <div class="fechas-eventos">
+                    <h3>Eventos</h3>
+                    <div class="evento">
+                        <div class="fecha-lugar">
+                            <p>Fecha: 11/04/2024</p>
+                            <p>Lugar: Puerto Montt</p>
+                        </div>
+                        <div class="descripcion">
+                            <p>Descripción: Llamamos a la comunidad de Puerto Montt a nuestro próximo evento en donde
+                                recolectaremos basura reciclable. Este es un gran paso hacia un Puerto Montt más limpio
+                                y sostenible. Además, como agradecimiento por su esfuerzo y contribución, se les pagará
+                                por la cantidad de basura que recolecten. ¡Es una gran oportunidad para hacer una
+                                diferencia en nuestra comunidad y al mismo tiempo obtener una recompensa por ello!
+                                ¡Esperamos verlos allí! </p>
+                        </div>
+                    </div>
+                    <div class="evento">
+                        <div class="fecha-lugar">
+                            <p>Fecha: 27/05/2024</p>
+                            <p>Lugar: Puerto Varas</p>
+                        </div>
+                        <div class="descripcion">
+                            <p>Descripción: Hacemos un llamado a la comunidad de Puerto Varas a unirse a nuestro próximo
+                                evento, donde estaremos limpiando las playas y calles de nuestra hermosa ciudad. Este es
+                                un paso importante hacia un Puerto Varas más limpio y sostenible. Además, como
+                                agradecimiento por su esfuerzo y contribución, se les pagará por la cantidad de basura
+                                que recojan. ¡Es una gran oportunidad para hacer una diferencia en nuestra comunidad y
+                                al mismo tiempo obtener una recompensa por ello! ¡Esperamos verlos allí!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-suscripcion-eventos">
+                <div class="row">
+                    <div class="col titulo-suscripcion-eventos">
+                        <h2>Suscribete a nuestro Newsletter</h2>
+                        <p>Recibe las últimas noticias y actualizaciones sobre nuestros eventos y servicios.</p>
+                    </div>
+                    <div class="col form-suscripcion-eventos">
+                        <form action="">
+                            <input type="email" name="email" id="email-suscripcion" placeholder="Tu Email">
+                            <input type="submit" value="Suscribirse">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <section class="cotiza-ubicacion" id="cotiza-ecocashback">
+            <article class="container-cotiza">
+                <h2>Cotiza con Nosotros</h2>
+                <p>¿Quires recibir ganacias con tu basura resiclable? Contactate con nosotros para poder saber cuanto
+                    podrias ganar reciclando con nosotros. </p>
+                <form action="">
+                    <div class="form-top">
+                        <input class="relleno-form" type="text" name="nombre" id="nombre" placeholder="Nombre">
+                        <input class="relleno-form" type="email" name="email-cotiza" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-botton">
+                        <input class="relleno-form" type="text" name="telefono" id="telefono" placeholder="Teléfono">
+                        <input class="relleno-form" type="text" name="material" id="material" placeholder="Material">
+                    </div>
+                    <div class="font-textarea">
+                        <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    </div>
+                    <div class="form-text">
+                        <input class="enviar-form" type="submit" value="Enviar">
+                    </div>
+                </form>
+            </article>
+            <article class="container-ubicacion" id="ubicacion-ecocashback">
+                <h2>Ubicación</h2>
+                <p>Estamos ubicados en Puerto Montt, pero también realizamos eventos en Puerto Varas. Si deseas
+                    contactarnos, puedes hacerlo a través de nuestro correo electrónico o número de teléfono. </p>
+                <div class="mapa">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.073013073073!2d-72.9440736846787!3d-41.47136607926147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a6f1b1b1b1b1b%3A0x7b1b1b1b1b1b1b1b!2sPuerto%20Montt%2C%20Los%20Lagos!5e0!3m2!1ses-419!2scl!4v1649240730007!5m2!1ses-419!2scl"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </article>
+        </section>
+    </section>
+    <footer>
+        <div class="conatiner-fluid">
+            <div class="row p-5">
+                <div class="col-xs-12 col-md-6 col-lg-3 footer-link-nombre">
+                    <p class="h3 mb-3">EcoCashBack</p>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3 footer-link-nombre">
+                    <p class="h5 mb-3">Redes Sociales</p>
+                    <div class="mb-2 footer-links">
+                        <a class="text-decoration-none" href="https://www.WhatsApp.com/">WhatsApp</a>
+                    </div>
+                    <div class="mb-2 footer-links">
+                        <a class="text-decoration-none" href="https://www.twitter.com/">Twitter</a>
+                    </div>
+                    <div class="mb-2 footer-links">
+                        <a class="text-decoration-none" href="https://www.instagram.com/">Instagram</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3 footer-link-nombre">
+                    <p class="h5 mb-3">Links</p>
+                    <div class="mb-2 footer-links">
+                        <a class="text-decoration-none" href="https://www.facebook.com/">Terms & Condiciones</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3 footer-link-nombre">
+                    <p class="h5 mb-3">Contacto</p>
+                    <div class="mb-2 footer-links">
+                        <p>Teléfono: +56 9 9999 9999</p>
+                    </div>
+                    <div class="mb-2 footer-links">
+                        <p>Email: info@ecocashback.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="derechos">&copy; 2024 EcoCashBack - Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleControls'), {
+            interval: 5000, // Cambia la velocidad de transición del carrusel (en milisegundos)
+            wrap: true // Permite que el carrusel vuelva al principio después de la última diapositiva
+        });
+    </script>
 </body>
 
 </html>
