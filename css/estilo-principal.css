@@ -3,7 +3,8 @@
     --crema: #faf4f1;
     --blanco: white;
     --oscuro: black;
-    --gris: #f5f5f5
+    --gris: #f5f5f5;
+    --azul: #33628c;
 }
 *{
     margin: 0;
@@ -13,7 +14,7 @@
 }
 
 body {
-    background-color: var(--gris);
+    background-color: var(--gris) !important;
 }
 
 
@@ -32,13 +33,6 @@ header {
 }
 
 
-@media (min-width: 768px) {
-    .container {
-        flex-direction: column;
-        justify-content: space-between;
-        
-    }
-}
 
 .col a {
     padding: 5px;
@@ -113,7 +107,7 @@ col{
 .carousel-item .texto-carusel{
     display: flex;
     justify-content: center !important;
-    background-color: rgba(0, 128, 0, 0.7); /* 70% de transparencia */
+    background-color: rgba(51, 98 ,140, 0.7); /* 70% de transparencia */
     border-radius: 20px;
 }
 
@@ -123,6 +117,26 @@ col{
     font-size: 40px !important;
     text-align: center;
 }
+/* @media (max-width: 768px) {
+    .container-slider .titulo{
+        font-size: 30px !important;
+    }
+    .texto-carusel h5 {
+        font-size: 20px !important;
+    }
+    .texto-carusel .parrafo-carusel {
+        font-size: 10px !important;
+    }
+    .titulo-carusel a{
+        padding: 5px !important;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 430px) {
+
+
+} */
 
 .texto-carusel .parrafo-carusel{
     color: white;
@@ -180,20 +194,19 @@ footer .footer-link-nombre {
     text-decoration: none;
 }
 
+
+
+/* Estilo Eventos */
 .contenedor-secciones{
     display: flex;
 }
 
-.eventos{
-    flex: 1.7;
+@media (max-width: 768px) {
+    .eventos .proximos-eventos{
+        flex-direction: column;
+
+    }
 }
-
-.cotiza-ubicacion{
-    flex: 0.3;
-
-}
-
-/* Estilo Eventos */
 
 
 .eventos {
@@ -209,6 +222,20 @@ footer .footer-link-nombre {
     padding-bottom: 15px;
 }
 
+
+/* @media (max-width: 430px) {
+    .eventos {
+        display: flex;
+        flex-direction: column;
+        color: var(--verde);
+        border: 1px solid var(--verde);
+        border-radius: 10px;
+        width: 50%;
+        margin: 50px;
+        padding-bottom: 15px;
+    }
+} */
+
 .proximos-eventos{
     padding-top: 10px;
     padding-left: 70px;
@@ -216,11 +243,29 @@ footer .footer-link-nombre {
     padding-bottom: 15px;
 }
 
+@media (max-width: 430px) {
+    .proximos-eventos{
+        padding-top: 30px;
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-bottom: 5px;
+    }
+}
+
 .eventos h2 {
     text-align: center;
     font-size: 40px;
     padding-top: 10px;
 }
+
+@media (max-width: 430px) {
+    .eventos h2 {
+        text-align: center;
+        font-size: 20px;
+        padding-top: 10px;
+    }
+}
+
 .fechas-eventos{
     padding-top: 15px;
 }
@@ -281,7 +326,7 @@ footer .footer-link-nombre {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
-    background-color: #333;
+    background-color: var(--azul);
     color: #fff;
     cursor: pointer;
 }
@@ -355,7 +400,7 @@ footer .footer-link-nombre {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
-    background-color: var(--verde);
+    background-color: var(--azul);
     color: #fff;
     cursor: pointer;
 }
@@ -443,12 +488,12 @@ textarea {
 }
 
 .contenedor-mision-vision p{
-    padding-bottom: 20x;
+    padding-bottom: 20px;
     color: var(--verde);
 }
 .lista-valores{
     padding: 0 40px;
-    padding-bottom: 20x;
+    padding-bottom: 20px;
 }
 
 
