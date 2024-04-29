@@ -85,6 +85,21 @@ col{
     padding: 5px;
     color: var(--verde);
 }
+.nav_celular{
+    display: none !important;
+}
+.container .text-center .nav_regular{
+    display: block !important;
+}
+
+@media (max-width: 899px){
+    .nav_celular{
+        display: block !important;
+    }
+    .nav_regular{
+        display: none !important;
+    }
+}
 
 /*Fin estilo barra de navegacion*/
 
