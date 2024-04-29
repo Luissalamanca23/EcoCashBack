@@ -200,7 +200,7 @@ footer .footer-link-nombre {
 
 
 /* Estilo Eventos */
-.contenedor-secciones{
+/* .contenedor-secciones{
     display: flex;
 }
 
@@ -237,7 +237,7 @@ footer .footer-link-nombre {
         margin: 50px;
         padding-bottom: 15px;
     }
-} */
+} 
 
 .proximos-eventos{
     padding-top: 10px;
@@ -305,10 +305,10 @@ footer .footer-link-nombre {
     flex-direction: column;
     padding: 20px;
     background-color: var(--crema); /* Cambia esto a cualquier color que necesites */
+    /*
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Esto añade un ligero sombreado alrededor del contenedor */
-}
-
+/*}
 .form-suscripcion-eventos form {
     display: flex;
     justify-content: center;
@@ -332,11 +332,11 @@ footer .footer-link-nombre {
     background-color: var(--azul);
     color: #fff;
     cursor: pointer;
-}
+} */
 
 /* Estilo Cotiza */
 
-.cotiza-ubicacion{
+/* .cotiza-ubicacion{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -410,7 +410,7 @@ footer .footer-link-nombre {
 
 textarea {
     resize: none;
-    /*field-sizing: content;*/
+    /*field-sizing: content;
     width: 400px;
     height: 50px;
     border-radius: 5px;
@@ -423,7 +423,7 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* el resto de tus estilos */
+    /* el resto de tus estilos 
 }
 
 .container-ubicacion h2 {
@@ -435,6 +435,21 @@ textarea {
 .container-ubicacion p{
     text-align: center;
     padding: 15px 70px;
+} */
+
+
+.contenedor-secciones .col{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: var(--verde);
+    border: 2px solid var(--verde);
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.contenedor-secciones .secciones .seccion-2{
+    padding-top: 20px;
 }
 
 

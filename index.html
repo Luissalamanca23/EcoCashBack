@@ -92,7 +92,7 @@
                             estimación de cuánto podrías ganar. Recuerda, cada artículo reciclable cuenta. No solo
                             estarás ganando dinero, sino que también estarás contribuyendo a un planeta más limpio y
                             sostenible. ¡Cotiza con nosotros hoy!</p>
-                        <a href="#cotiza-ecocashback">Ir a proximos Eventos</a>
+                        <a href="#cotiza-ecocashback">Ir a Cotiza</a>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -119,92 +119,125 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
+    </div> <!--                 fin carousel                 -->
+
+
     <section class="contenedor-secciones" id="eventos-ecocashback">
-        <article class="eventos">
-            <div class="proximos-eventos">
-                <h2>Proximos Eventos</h2>
-                <div class="fechas-eventos">
-                    <h3>Eventos</h3>
-                    <div class="evento">
-                        <div class="fecha-lugar">
-                            <p>Fecha: 11/04/2024</p>
-                            <p>Lugar: Puerto Montt</p>
+        <article>
+            <div class="container text-center">
+                <div class="row-cols-auto secciones">
+                    <div class="col">
+                        <h2>Proximos Eventos</h2>   
+                        <div class="fechas-eventos">
+                            <h3>Eventos</h3>
+                            <div class="evento">
+                                <div class="fecha-lugar">
+                                    <p>Fecha: 11/04/2024</p>
+                                    <p>Lugar: Puerto Montt</p>
+                                </div>
+                                <div class="descripcion">
+                                    <p>
+                                        Descripción: Llamamos a la comunidad de Puerto Montt a
+                                        nuestro próximo evento en donde recolectaremos basura
+                                        reciclable. Este es un gran paso hacia un Puerto Montt más
+                                        limpio y sostenible. Además, como agradecimiento por su
+                                        esfuerzo y contribución, se les pagará por la cantidad de
+                                        basura que recolecten. ¡Es una gran oportunidad para hacer
+                                        una diferencia en nuestra comunidad y al mismo tiempo
+                                        obtener una recompensa por ello! ¡Esperamos verlos allí!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="evento">
+                                <div class="fecha-lugar">
+                                    <p>Fecha: 27/05/2024</p>
+                                    <p>Lugar: Puerto Varas</p>
+                                </div>
+                                <div class="descripcion">
+                                    <p>
+                                        Descripción: Hacemos un llamado a la comunidad de Puerto
+                                        Varas a unirse a nuestro próximo evento, donde estaremos
+                                        limpiando las playas y calles de nuestra hermosa ciudad.
+                                        Este es un paso importante hacia un Puerto Varas más
+                                        limpio y sostenible. Además, como agradecimiento por su
+                                        esfuerzo y contribución, se les pagará por la cantidad de
+                                        basura que recojan. ¡Es una gran oportunidad para hacer
+                                        una diferencia en nuestra comunidad y al mismo tiempo
+                                        obtener una recompensa por ello! ¡Esperamos verlos allí!
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="descripcion">
-                            <p>Descripción: Llamamos a la comunidad de Puerto Montt a nuestro próximo evento en donde
-                                recolectaremos basura reciclable. Este es un gran paso hacia un Puerto Montt más limpio
-                                y sostenible. Además, como agradecimiento por su esfuerzo y contribución, se les pagará
-                                por la cantidad de basura que recolecten. ¡Es una gran oportunidad para hacer una
-                                diferencia en nuestra comunidad y al mismo tiempo obtener una recompensa por ello!
-                                ¡Esperamos verlos allí! </p>
+                        <div class="container-suscripcion-eventos">
+                            <div class="row">
+                                <div class="col titulo-suscripcion-eventos">
+                                    <h2>Suscribete a nuestro Newsletter</h2>
+                                    <p>
+                                        Recibe las últimas noticias y actualizaciones sobre
+                                        nuestros eventos y servicios.
+                                    </p>
+                                </div>
+                                <div class="col form-suscripcion-eventos">
+                                    <form action="">
+                                        <input type="email" name="email" id="email-suscripcion"
+                                            placeholder="Tu Email" />
+                                        <input onclick="validarEmail(email)" type="submit" value="Suscribirse" />
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="evento">
-                        <div class="fecha-lugar">
-                            <p>Fecha: 27/05/2024</p>
-                            <p>Lugar: Puerto Varas</p>
-                        </div>
-                        <div class="descripcion">
-                            <p>Descripción: Hacemos un llamado a la comunidad de Puerto Varas a unirse a nuestro próximo
-                                evento, donde estaremos limpiando las playas y calles de nuestra hermosa ciudad. Este es
-                                un paso importante hacia un Puerto Varas más limpio y sostenible. Además, como
-                                agradecimiento por su esfuerzo y contribución, se les pagará por la cantidad de basura
-                                que recojan. ¡Es una gran oportunidad para hacer una diferencia en nuestra comunidad y
-                                al mismo tiempo obtener una recompensa por ello! ¡Esperamos verlos allí!</p>
-                        </div>
+                    <div class="col seccion-2" id="cotiza-ecocashback">
+                        <h2>Cotiza con Nosotros</h2>
+                        <p>
+                            ¿Quires recibir ganacias con tu basura resiclable? Contactate
+                            con nosotros para poder saber cuanto podrias ganar reciclando
+                            con nosotros.
+                        </p>
+                        <form action="">
+                            <div class="form-top">
+                                <input class="relleno-form" type="text" name="nombre" id="nombre"
+                                    placeholder="Nombre" />
+                                <input class="relleno-form" type="email" name="email-cotiza" id="email"
+                                    placeholder="Email" />
+                            </div>
+                            <div class="form-botton">
+                                <input class="relleno-form" type="text" name="telefono" id="telefono"
+                                    placeholder="Teléfono" />
+                                <input class="relleno-form" type="text" name="material" id="material"
+                                    placeholder="Material" />
+                            </div>
+                            <div class="font-textarea">
+                                <textarea name="mensaje" id="mensaje" cols="30" rows="10"
+                                    placeholder="Mensaje"></textarea>
+                            </div>
+                            <div class="form-text">
+                                <input class="enviar-form" type="submit" value="Enviar" />
+                            </div>
+                        </form>
+                        <article class="container-ubicacion" id="ubicacion-ecocashback">
+                            <h2>Ubicación</h2>
+                            <p>
+                                Estamos ubicados en Puerto Montt, pero también realizamos
+                                eventos en Puerto Varas. Si deseas contactarnos, puedes
+                                hacerlo a través de nuestro correo electrónico o número de
+                                teléfono.
+                            </p>
+                            <div class="mapa">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.073013073073!2d-72.9440736846787!3d-41.47136607926147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a6f1b1b1b1b1b%3A0x7b1b1b1b1b1b1b1b!2sPuerto%20Montt%2C%20Los%20Lagos!5e0!3m2!1ses-419!2scl!4v1649240730007!5m2!1ses-419!2scl"
+                                    width="600" height="450" style="border: 0" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-            <div class="container-suscripcion-eventos">
-                <div class="row">
-                        <div class="col titulo-suscripcion-eventos">
-                            <h2>Suscribete a nuestro Newsletter</h2>
-                            <p>Recibe las últimas noticias y actualizaciones sobre nuestros eventos y servicios.</p>
-                        </div>
-                        <div class="col form-suscripcion-eventos">
-                            <form action="">
-                                <input type="email" name="email" id="email-suscripcion" placeholder="Tu Email">
-                                <input onclick="validarEmail(email)" type="submit" value="Suscribirse">
-                            </form>
-                        </div>
-                </div>
-            </div>
-        </article>
-        <article class="cotiza-ubicacion" id="cotiza-ecocashback">
-            <di class="container-cotiza">
-                <h2>Cotiza con Nosotros</h2>
-                <p>¿Quires recibir ganacias con tu basura resiclable? Contactate con nosotros para poder saber cuanto
-                    podrias ganar reciclando con nosotros. </p>
-                <form action="">
-                    <div class="form-top">
-                        <input class="relleno-form" type="text" name="nombre" id="nombre" placeholder="Nombre">
-                        <input class="relleno-form" type="email" name="email-cotiza" id="email" placeholder="Email">
-                    </div>
-                    <div class="form-botton">
-                        <input class="relleno-form" type="text" name="telefono" id="telefono" placeholder="Teléfono">
-                        <input class="relleno-form" type="text" name="material" id="material" placeholder="Material">
-                    </div>
-                    <div class="font-textarea">
-                        <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                    </div>
-                    <div class="form-text">
-                        <input class="enviar-form" type="submit" value="Enviar">
-                    </div>
-                </form>
-            </di>
-            <article class="container-ubicacion" id="ubicacion-ecocashback">
-                <h2>Ubicación</h2>
-                <p>Estamos ubicados en Puerto Montt, pero también realizamos eventos en Puerto Varas. Si deseas
-                    contactarnos, puedes hacerlo a través de nuestro correo electrónico o número de teléfono. </p>
-                <div class="mapa">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.073013073073!2d-72.9440736846787!3d-41.47136607926147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a6f1b1b1b1b1b%3A0x7b1b1b1b1b1b1b1b!2sPuerto%20Montt%2C%20Los%20Lagos!5e0!3m2!1ses-419!2scl!4v1649240730007!5m2!1ses-419!2scl"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </article>
         </article>
     </section>
+
+    <!--                 fin eventos                 -->
+
     <footer>
         <div class="conatiner-fluid">
             <div class="row p-5">
