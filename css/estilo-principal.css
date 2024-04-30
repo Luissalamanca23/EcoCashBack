@@ -95,6 +95,7 @@ col{
 @media (max-width: 899px){
     .nav_celular{
         display: block !important;
+        background-color: var(--crema) !important;
     }
     .nav_regular{
         display: none !important;
