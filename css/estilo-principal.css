@@ -108,6 +108,7 @@ col{
 
 
 .titulo{
+    padding-top: 8% !important;
     color: var(--verde);
     text-align: center;
     font-size: 40px;
@@ -184,6 +185,7 @@ col{
 
 footer {
     background-color: var(--crema) !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Esto añade un ligero sombreado alrededor del contenedor */
 }
 
 footer .derechos {
@@ -309,6 +311,7 @@ footer .footer-link-nombre {
     float: left;
     width: 96%;
 }
+*/
 .titulo-suscripcion-eventos p{
     text-align: center;
     padding-top: 10px;
@@ -321,11 +324,11 @@ footer .footer-link-nombre {
     flex-direction: column;
     padding: 20px;
     background-color: var(--crema); /* Cambia esto a cualquier color que necesites */
-    /*
+    
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Esto añade un ligero sombreado alrededor del contenedor */
-/*}
-.form-suscripcion-eventos form {
+}
+form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -333,7 +336,7 @@ footer .footer-link-nombre {
     gap: 10px;
 }
 
-.form-suscripcion-eventos input[type="email"] {
+input[type="correo"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -341,14 +344,14 @@ footer .footer-link-nombre {
     box-sizing: border-box;
 }
 
-.form-suscripcion-eventos form input[type="submit"] {
+form input[type="submit"] {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
     background-color: var(--azul);
     color: #fff;
     cursor: pointer;
-} */
+} 
 
 /* Estilo Cotiza */
 
