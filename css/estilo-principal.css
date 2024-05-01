@@ -5,6 +5,8 @@
     --oscuro: black;
     --gris: #f5f5f5;
     --azul: #33628c;
+    --verde-claro: #42ac25c0;
+    --rojo: #ff0000;
 }
 *{
     margin: 0;
@@ -100,6 +102,10 @@ col{
     .nav_regular{
         display: none !important;
     }
+}
+
+.cel-header{
+    background-color: var(--crema);
 }
 
 /*Fin estilo barra de navegacion*/
@@ -336,15 +342,14 @@ form {
     gap: 10px;
 }
 
-input[type="correo"] {
+input[type="email"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 100%;
     box-sizing: border-box;
 }
 
-form input[type="submit"] {
+.button-suscripcion  {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
@@ -352,6 +357,18 @@ form input[type="submit"] {
     color: #fff;
     cursor: pointer;
 } 
+
+.msg-correo-sus .msg{
+    display: none; /* El mensaje estará oculto por defecto */
+    text-align: center;
+    background-color: var(--verde-claro);
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    margin-top: 10px; /* Añade un margen en la parte superior */
+    transition: all 0.3s ease; /* Añade una transición para suavizar el cambio de estilos */
+}
 
 /* Estilo Cotiza */
 
