@@ -53,7 +53,7 @@
             </div>
         </nav>
         <nav class="navbar navbar-expand-lg bg-body-tertiary nav_celular">
-            <div class="container-fluid">
+            <div class="container-fluid cel-header">
                 <div class="col">
                     <img class="logo-ecocashback" src="fotos/logo-ecocashback.jpeg" alt="Logo-EcoCashBack">
                 </div>
@@ -216,10 +216,13 @@
                                 </div>
 
                                     <form action="">
-                                        <input type="correo" name="email" id="email-suscripcion"
+                                        <input type="email" name="email" id="email-suscripcion"
                                             placeholder="Tu Email" />
-                                        <input onclick=validar_email(email) type="submit" value="Suscribirse" />
+                                        <button class="button-suscripcion" onclick=validar_email(event) >Suscribirse</button>
                                     </form>
+                                    <div class="msg-correo-sus">
+                                        <p id="mensaje" class="msg"> El correo es correcto </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -262,10 +265,12 @@
                                 teléfono.
                             </p>
                             <div class="mapa">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.073013073073!2d-72.9440736846787!3d-41.47136607926147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a6f1b1b1b1b1b%3A0x7b1b1b1b1b1b1b1b!2sPuerto%20Montt%2C%20Los%20Lagos!5e0!3m2!1ses-419!2scl!4v1649240730007!5m2!1ses-419!2scl"
-                                    width="600" height="450" style="border: 0" allowfullscreen=""
-                                    loading="lazy"></iframe>
+                                <div style="position: relative; overflow: hidden; padding-top: 75%;">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.073013073073!2d-72.9440736846787!3d-41.47136607926147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a6f1b1b1b1b1b%3A0x7b1b1b1b1b1b1b1b!2sPuerto%20Montt%2C%20Los%20Lagos!5e0!3m2!1ses-419!2scl!4v1649240730007!5m2!1ses-419!2scl"
+                                        style="border: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen=""
+                                        loading="lazy"></iframe>
+                                </div>
                             </div>
                         </article>
                     </div>
