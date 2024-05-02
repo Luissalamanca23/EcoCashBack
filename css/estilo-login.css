@@ -23,6 +23,9 @@ header {
     background-color: var(--crema);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
 }
 
 .container {
@@ -32,13 +35,6 @@ header {
 }
 
 
-@media (min-width: 768px) {
-    .container {
-        flex-direction: column;
-        justify-content: space-between;
-        
-    }
-}
 
 .col a {
     padding: 5px;
@@ -62,8 +58,8 @@ col a:hover {
 .logo-ecocashback {
     border-radius: 20px;
     background-color: white;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
 }
 
 .col a{
@@ -87,6 +83,26 @@ col{
     border-radius: 50%;
     padding: 5px;
     color: var(--verde);
+}
+.nav_celular{
+    display: none !important;
+}
+
+.cel-header{
+    background-color: var(--crema);
+}
+
+.container .text-center .nav_regular{
+    display: block !important;
+}
+
+@media (max-width: 899px){
+    .nav_celular{
+        display: block !important;
+    }
+    .nav_regular{
+        display: none !important;
+    }
 }
 
 /*Fin estilo barra de navegacion*/
