@@ -235,89 +235,20 @@ footer .footer-link-nombre {
     }
 }
 
-
-.eventos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    color: var(--verde);
-    border: 2px solid var(--verde);
-    border-radius: 10px;
-    width: 50%;
-    margin: 50px;
-    padding-bottom: 15px;
-}
-
-
-/* @media (max-width: 430px) {
-    .eventos {
-        display: flex;
-        flex-direction: column;
-        color: var(--verde);
-        border: 1px solid var(--verde);
-        border-radius: 10px;
-        width: 50%;
-        margin: 50px;
-        padding-bottom: 15px;
-    }
-} 
-
-.proximos-eventos{
-    padding-top: 10px;
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-bottom: 15px;
-}
-
-@media (max-width: 430px) {
-    .proximos-eventos{
-        padding-top: 30px;
-        padding-left: 60px;
-        padding-right: 60px;
-        padding-bottom: 5px;
-    }
-}
-
-.eventos h2 {
-    text-align: center;
-    font-size: 40px;
-    padding-top: 10px;
-}
-
-@media (max-width: 430px) {
-    .eventos h2 {
-        text-align: center;
-        font-size: 20px;
-        padding-top: 10px;
-    }
-}
-
-.fechas-eventos{
-    padding-top: 15px;
-}
-
+*/
 .fechas-eventos .evento{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding-top: 10px;
-    border: 1px solid var(--verde);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     margin-bottom: 10px;
+
 }
 
-.evento .fecha-lugar{
-    float: left;
-    width: 97%;
-}
 
-.evento .descripcion{
-    float: left;
-    width: 96%;
-}
-*/
 .titulo-suscripcion-eventos p{
     text-align: center;
     padding-top: 10px;
