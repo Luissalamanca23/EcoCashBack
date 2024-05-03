@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/ejemplo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('p').hide();
+            });
+        })
+
+        $(document).ready(function(){
+            $(this).click(function(){
+                $('#test').hide();
+            });
+        })
+
+        $(document.ready(function(){
+            $('#btn1').click(function(){
+                $('#box').animate({
+                height: '300px'
+                });
+                $('h1').show();
+            });
+            $('#btn2').click(function(){
+                $('#box').animate({
+                height: '100px'
+                });
+                $('h1').hide();
+            });
+        }));
+
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                alert('Texto: ' + $('#test2').text());
+            });
+            $('#btn2').click(function(){
+                alert('Html: ' + $('#test2').html());
+            });
+        });
+
+
+        // sumar dos numeros 
+        $(document).ready(function(){
+            $('#btn3-sum').click(function(){
+                var x = parseInt($('#num1').val());
+                var y = parseInt($('#num2').val());
+                var sum = x + y;
+            });
+            $('#resultado').text('Resultado: ' + sum);
+            alert('Resultado: ' + sum);
+        });
+    </script>
+</head>
+<body>
+    <div>
+    <h2>Primer parrafo</h2>
+
+    <p>segundo parrafo</p>
+    <p id="test">este parrafo se va a ocultar al hacer click</p>
+
+    <button>pinche aqui</button>
+
+</div>
+
+
+
+    <div>
+
+        <button id="btn1">Alargar</button>
+        <button id="btn2">Acortar</button>
+
+
+        <div id="box" style="background: #98bf21; height: 100px; width: 100px; margin: 6px;">
+
+        </div>
+    </div>
+
+
+    <div>
+        <p class="" id="test2">HOLA <br> <b>MUNDO</p>
+        <input type="text2" id="nombre">
+
+        <button id="btn1">Mostrar Texto</button>
+        <button id="btn2">Mostrar Html</button>
+        <button id="btn3">Mostrar Valor</button>
+    </div>
+
+    <form action="">
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+        <p id="resultado"></p>
+        <button id="btn3-sum">Sumar</button>
+    </form>
+</body>
+</html>
