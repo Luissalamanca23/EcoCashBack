@@ -318,6 +318,18 @@ input[type="email"] {
 /* Estilo Cotiza */
 
 
+#eventos-ecocashback #cotiza-ecocashback{
+    padding: 40px 30px !important;
+    margin: 0 20px !important;
+}
+
+
+#contenedor {
+    display: flex;
+    align-items: stretch; /* Esto hace que los hijos tengan la misma altura */
+}
+
+
 /* .cotiza-ubicacion{
     display: flex;
     justify-content: center;
