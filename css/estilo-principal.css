@@ -317,6 +317,7 @@ input[type="email"] {
 
 /* Estilo Cotiza */
 
+
 /* .cotiza-ubicacion{
     display: flex;
     justify-content: center;
@@ -429,7 +430,7 @@ textarea {
     padding: 2%;
 }
 
-.contenedor-secciones .secciones .seccion-2{
+.contenedor-secciones .secciones #cotiza-ecocashback{
     padding-top: 20px;
 }
 
