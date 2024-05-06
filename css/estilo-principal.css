@@ -9,13 +9,15 @@
     --rojo: #ff0000;
 }
 *{
-    margin: 0;
-    padding: 0;
+    
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+    overflow-x: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
     background-color: var(--gris) !important;
 }
 
@@ -32,7 +34,6 @@ header {
     background-color: var(--crema);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
     z-index: 1000;
     width: 100%;
 }
@@ -118,9 +119,7 @@ col{
 
 /* Estilo carrusel */
 
-
 .titulo{
-    padding-top: 8% !important;
     color: var(--verde);
     text-align: center;
     font-size: 40px;
@@ -128,9 +127,7 @@ col{
     padding-bottom: 30px;
 }
 
-.container-slider{
-    padding: 0 5%;
-}
+
 .carousel-item {
     display: flex;
     justify-content: center !important; /* Esto alinea los elementos horizontalmente en el centro */
@@ -153,9 +150,6 @@ col{
 
 @media (max-width: 899px){
 
-    .titulo{
-        padding-top: 30% !important;
-    }
 
     .carousel-item .parrafo-carusel{
         border-radius: 10px;
