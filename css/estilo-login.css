@@ -22,8 +22,7 @@ body {
 header {
     background-color: var(--crema);
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) !important;
     z-index: 1000;
     width: 100%;
 }
@@ -112,6 +111,7 @@ col{
 
 footer {
     background-color: var(--crema) !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) !important;
 }
 
 footer .derechos {
@@ -180,5 +180,13 @@ footer .footer-link-nombre {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    padding: 0 90px;
+    padding: 0 70px;
+}
+
+
+
+.imput-form-login h6{
+    font-size: 15px;
+    color: red;
+    text-align: center;
 }
