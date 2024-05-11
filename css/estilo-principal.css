@@ -594,3 +594,11 @@ input[type="text"] {
     height: 200px; /* Esto establece una altura fija */
     object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio sin distorsionarse */
   }
+
+  .card {
+    height: 100%; /* Esto hará que la tarjeta ocupe todo el alto de su contenedor */
+  }
+  
+  .card-body {
+    min-height: 200px; /* Esto establece un alto mínimo para el contenido de la tarjeta */
+  }
