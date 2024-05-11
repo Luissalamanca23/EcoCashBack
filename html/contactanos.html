@@ -18,7 +18,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script>
         function validar_campos_contacto(event) {
@@ -69,6 +70,16 @@
                 setTimeout(() => {
                     $('#val_camp_msg').text('');
                 }, 3000);
+
+                var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                if (!regex.test(email)) {
+                    $('#val_email_contac').text('El formato de correo no es válido');
+                    $('#val_email_contac').css('color', 'red');
+                    console.log('El formato de correo no es válido');
+                    setTimeout(() => {
+                        $('#val_email_contac').text('');
+                    }, 3000);
+                }
             }
         }
     </script>
@@ -195,7 +206,8 @@
                                 <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
                                 <h6 id="val_mensaje_contac"></h6>
                             </div>
-                            <button onclick=validar_campos_contacto(event) type="submit" class="btn btn-primary">Enviar</button>
+                            <button onclick=validar_campos_contacto(event) type="submit"
+                                class="btn btn-primary">Enviar</button>
                             <h6 id="val_camp_msg"></h6>
                         </form>
                     </div>

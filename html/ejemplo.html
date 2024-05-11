@@ -62,7 +62,7 @@
 
         function traer_datos(){
             $(document).click(function(){
-                $.get('https://www.themealdb.com/api/json/v1/1/categories.php', 
+                $.get('https://huachitos.cl/api/animales/', 
                     function(data){
                     $.each(data.categories, function(i, item){
                         $('#categorias').append('<tr><td>' 
