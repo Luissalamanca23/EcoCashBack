@@ -5,17 +5,27 @@
     --oscuro: black;
     --gris: #f5f5f5;
     --azul: #33628c;
+    --verde-claro: #42ac25c0;
+    --rojo: #ff0000;
 }
 *{
-    margin: 0;
-    padding: 0;
+    
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+    overflow-x: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
     background-color: var(--gris) !important;
 }
+
+::selection {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
 
 
 /*Estilo barra de navegacion*/
@@ -24,7 +34,6 @@ header {
     background-color: var(--crema);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
     z-index: 1000;
     width: 100%;
 }
@@ -85,11 +94,30 @@ col{
     padding: 5px;
     color: var(--verde);
 }
+.nav_celular{
+    display: none !important;
+}
+.container .text-center .nav_regular{
+    display: block !important;
+}
+
+@media (max-width: 899px){
+    .nav_celular{
+        display: block !important;
+        background-color: var(--crema) !important;
+    }
+    .nav_regular{
+        display: none !important;
+    }
+}
+
+.cel-header{
+    background-color: var(--crema);
+}
 
 /*Fin estilo barra de navegacion*/
 
 /* Estilo carrusel */
-
 
 .titulo{
     color: var(--verde);
@@ -99,9 +127,7 @@ col{
     padding-bottom: 30px;
 }
 
-.container-slider{
-    padding: 0 5%;
-}
+
 .carousel-item {
     display: flex;
     justify-content: center !important; /* Esto alinea los elementos horizontalmente en el centro */
@@ -120,26 +146,28 @@ col{
     font-size: 40px !important;
     text-align: center;
 }
-/* @media (max-width: 768px) {
-    .container-slider .titulo{
-        font-size: 30px !important;
+
+
+@media (max-width: 899px){
+
+
+    .carousel-item .parrafo-carusel{
+        border-radius: 10px;
+        font-size: 13px !important; 
     }
-    .texto-carusel h5 {
-        font-size: 20px !important;
+    
+    .texto-carusel h5{
+        color: white;
+        padding: 10px;
+        font-size: 40px !important;
+        text-align: center;
+        font-size: 15px !important;
     }
-    .texto-carusel .parrafo-carusel {
-        font-size: 10px !important;
-    }
-    .titulo-carusel a{
-        padding: 5px !important;
-        border-radius: 5px;
+    .texto-carusel a{
+        font-size: small !important;
     }
 }
 
-@media (max-width: 430px) {
-
-
-} */
 
 .texto-carusel .parrafo-carusel{
     color: white;
@@ -174,6 +202,7 @@ col{
 
 footer {
     background-color: var(--crema) !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Esto añade un ligero sombreado alrededor del contenedor */
 }
 
 footer .derechos {
@@ -206,7 +235,7 @@ footer .footer-link-nombre {
 
 
 /* Estilo Eventos */
-.contenedor-secciones{
+/* .contenedor-secciones{
     display: flex;
 }
 
@@ -217,91 +246,26 @@ footer .footer-link-nombre {
     }
 }
 
-
-.eventos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    color: var(--verde);
-    border: 2px solid var(--verde);
-    border-radius: 10px;
-    width: 50%;
-    margin: 50px;
-    padding-bottom: 15px;
-}
-
-
-/* @media (max-width: 430px) {
-    .eventos {
-        display: flex;
-        flex-direction: column;
-        color: var(--verde);
-        border: 1px solid var(--verde);
-        border-radius: 10px;
-        width: 50%;
-        margin: 50px;
-        padding-bottom: 15px;
-    }
-} */
-
-.proximos-eventos{
-    padding-top: 10px;
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-bottom: 15px;
-}
-
-@media (max-width: 430px) {
-    .proximos-eventos{
-        padding-top: 30px;
-        padding-left: 60px;
-        padding-right: 60px;
-        padding-bottom: 5px;
-    }
-}
-
-.eventos h2 {
-    text-align: center;
-    font-size: 40px;
-    padding-top: 10px;
-}
-
-@media (max-width: 430px) {
-    .eventos h2 {
-        text-align: center;
-        font-size: 20px;
-        padding-top: 10px;
-    }
-}
-
-.fechas-eventos{
-    padding-top: 15px;
-}
-
+*/
 .fechas-eventos .evento{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding-top: 10px;
-    border: 1px solid var(--verde);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.evento .fecha-lugar{
-    float: left;
-    width: 97%;
-}
 
-.evento .descripcion{
-    float: left;
-    width: 96%;
-}
 .titulo-suscripcion-eventos p{
     text-align: center;
     padding-top: 10px;
+}
+
+.evento .descripcion p{
+    padding: 3%;
 }
 
 .container-suscripcion-eventos {
@@ -311,11 +275,11 @@ footer .footer-link-nombre {
     flex-direction: column;
     padding: 20px;
     background-color: var(--crema); /* Cambia esto a cualquier color que necesites */
+    
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Esto añade un ligero sombreado alrededor del contenedor */
 }
-
-.form-suscripcion-eventos form {
+form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -323,26 +287,50 @@ footer .footer-link-nombre {
     gap: 10px;
 }
 
-.form-suscripcion-eventos input[type="email"] {
-    padding: 10px;
+input[type="email"] {
+    padding: 7px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 100%;
     box-sizing: border-box;
 }
 
-.form-suscripcion-eventos form input[type="submit"] {
+.button-suscripcion  {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
     background-color: var(--azul);
     color: #fff;
     cursor: pointer;
+} 
+
+.msg-correo-sus .msg{
+    display: none; /* El mensaje estará oculto por defecto */
+    text-align: center;
+    background-color: var(--verde-claro);
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    margin-top: 10px; /* Añade un margen en la parte superior */
+    transition: all 0.3s ease; /* Añade una transición para suavizar el cambio de estilos */
 }
 
 /* Estilo Cotiza */
 
-.cotiza-ubicacion{
+
+#eventos-ecocashback #cotiza-ecocashback{
+    padding: 40px 30px !important;
+    margin: 0 20px !important;
+}
+
+
+#contenedor {
+    display: flex;
+    align-items: stretch; /* Esto hace que los hijos tengan la misma altura */
+}
+
+
+/* .cotiza-ubicacion{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -416,7 +404,7 @@ footer .footer-link-nombre {
 
 textarea {
     resize: none;
-    /*field-sizing: content;*/
+    /*field-sizing: content;
     width: 400px;
     height: 50px;
     border-radius: 5px;
@@ -429,7 +417,7 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* el resto de tus estilos */
+    /* el resto de tus estilos 
 }
 
 .container-ubicacion h2 {
@@ -441,6 +429,73 @@ textarea {
 .container-ubicacion p{
     text-align: center;
     padding: 15px 70px;
+} */
+
+
+.contenedor-secciones .col{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: var(--verde);
+    border: 2px solid var(--verde);
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.contenedor-secciones .secciones #cotiza-ecocashback{
+    padding-top: 20px;
+}
+
+
+input[type="text"] {
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.seccion-cotiza{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--verde);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding-bottom: 20px;
+}
+
+.cotiza-ecocashback .font-textarea #mensaje {
+    resize: none;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.relleno-form{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--verde);
+    width: 40%;
+    box-sizing: border-box;
+}
+
+
+.container-ubicacion{
+    padding-top: 20px;
+    
+}
+
+.msg-validar-campos .msg{
+    display: none; /* El mensaje estará oculto por defecto */
+    text-align: center;
+    background-color: var(--verde-claro);
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    margin-top: 10px; /* Añade un margen en la parte superior */
+    transition: all 0.3s ease; /* Añade una transición para suavizar el cambio de estilos */
 }
 
 
@@ -512,4 +567,21 @@ textarea {
     text-align: center;
     color: var(--verde);
 }
-    
+
+
+/* Estilo subir pagina */
+
+
+.subir-pagina{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: var(--blanco);
+    padding: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}

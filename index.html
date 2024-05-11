@@ -14,17 +14,21 @@
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilo-principal.css">
+    <meta name="google-site-verification" content="Gd9MCIovA2JFHNA4CInROaqd-kYPQgFl9_KlDNKJyeg" />
+    <script src="js/index.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <meta name="google-site-verification" content="Gd9MCIovA2JFHNA4CInROaqd-kYPQgFl9_KlDNKJyeg" />
 </head>
 
 <body>
     <header>
-        <nav class="container text-center">
+        <nav class="container text-center nav_regular">
             <div class="row">
                 <div class="col">
                     <img class="logo-ecocashback" src="fotos/logo-ecocashback.jpeg" alt="Logo-EcoCashBack">
@@ -39,6 +43,9 @@
                     <a href="html/sobre-nosotros.html">Sobre Nosotros</a>
                 </div>
                 <div class="col">
+                    <a href="html/contactanos.html">Contactanos</a>
+                </div>
+                <div class="col">
                     <a href="html/login.html">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user icon-user-nav"
                             width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
@@ -51,13 +58,55 @@
                 </div>
             </div>
         </nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary nav_celular">
+            <div class="container-fluid cel-header">
+                <div class="col">
+                    <img class="logo-ecocashback" src="fotos/logo-ecocashback.jpeg" alt="Logo-EcoCashBack">
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/sobre-nosotros.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="html/contactanos.html">Contactanos</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="col">
+                                <a href="html/login.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler icon-tabler-user icon-user-nav" width="44" height="44"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-    <div class="container-slider">
+    <br>
+    <div class="container-slider" id="inicio">
         <h2 class="titulo">Nuestra Historia</h2>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="fotos/img1.jpg" class="d-block w-100" alt="Foto 1">
+                    <img src="fotos/basureros.jpg" class="d-block w-100" alt="Foto 1">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Nuestra Ubicacion</h5>
                         <p class="parrafo-carusel">Nos encontramos en el corazón de Puerto Montt, una ciudad llena de
@@ -69,7 +118,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="fotos/img2.jpg" class="d-block w-100" alt="Foto 2">
+                    <img src="fotos/personal-anotando.jpg" class="d-block w-100" alt="Foto 2">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Sobre Nosotros</h5>
                         <p class="parrafo-carusel">Somos EcoCashBack, una organización comprometida con la promoción del
@@ -82,7 +131,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="fotos/img3.jpg" class="d-block w-100" alt="Foto 3">
+                    <img src="fotos/personal_trabajando.png" class="d-block w-100" alt="Foto 3">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Cotiza con nosotros</h5>
                         <p class="parrafo-carusel">En EcoCashBack, creemos en el valor de los desechos reciclables. Si
@@ -92,7 +141,7 @@
                             estimación de cuánto podrías ganar. Recuerda, cada artículo reciclable cuenta. No solo
                             estarás ganando dinero, sino que también estarás contribuyendo a un planeta más limpio y
                             sostenible. ¡Cotiza con nosotros hoy!</p>
-                        <a href="#cotiza-ecocashback">Ir a proximos Eventos</a>
+                        <a href="#cotiza-ecocashback">Ir a Cotiza</a>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -119,92 +168,145 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
+    </div> <!--                 fin carousel                 -->
+    <br>
+
     <section class="contenedor-secciones" id="eventos-ecocashback">
-        <article class="eventos">
-            <div class="proximos-eventos">
-                <h2>Proximos Eventos</h2>
-                <div class="fechas-eventos">
-                    <h3>Eventos</h3>
-                    <div class="evento">
-                        <div class="fecha-lugar">
-                            <p>Fecha: 11/04/2024</p>
-                            <p>Lugar: Puerto Montt</p>
+        <article class="p-3 m-0 border-0 bd-example m-0 border-0 bd-example-row">
+            <div class="container text-center">
+                <div class="row" id="contenedor">
+                    <div class="col" id="eventos-ecocashback">
+                        <h2>Proximos Eventos</h2>
+                        <div class="fechas-eventos">
+                            <h3>Eventos</h3>
+                            <div class="evento">
+                                <div class="fecha-lugar">
+                                    <p>Fecha: 11/04/2024</p>
+                                    <p>Lugar: Puerto Montt</p>
+                                </div>
+                                <div class="descripcion">
+                                    <p>
+                                        Descripción: Llamamos a la comunidad de Puerto Montt a nuestro
+                                        próximo evento en donde recolectaremos basura reciclable. Este
+                                        es un gran paso hacia un Puerto Montt más limpio y sostenible.
+                                        Además, como agradecimiento por su esfuerzo y contribución, se
+                                        les pagará por la cantidad de basura que recolecten. ¡Es una
+                                        gran oportunidad para hacer una diferencia en nuestra
+                                        comunidad y al mismo tiempo obtener una recompensa por ello!
+                                        ¡Esperamos verlos allí!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="evento">
+                                <div class="fecha-lugar">
+                                    <p>Fecha: 27/05/2024</p>
+                                    <p>Lugar: Puerto Varas</p>
+                                </div>
+                                <div class="descripcion">
+                                    <p>
+                                        Descripción: Hacemos un llamado a la comunidad de Puerto Varas
+                                        a unirse a nuestro próximo evento, donde estaremos limpiando
+                                        las playas y calles de nuestra hermosa ciudad. Este es un paso
+                                        importante hacia un Puerto Varas más limpio y sostenible.
+                                        Además, como agradecimiento por su esfuerzo y contribución, se
+                                        les pagará por la cantidad de basura que recojan. ¡Es una gran
+                                        oportunidad para hacer una diferencia en nuestra comunidad y
+                                        al mismo tiempo obtener una recompensa por ello! ¡Esperamos
+                                        verlos allí!
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="descripcion">
-                            <p>Descripción: Llamamos a la comunidad de Puerto Montt a nuestro próximo evento en donde
-                                recolectaremos basura reciclable. Este es un gran paso hacia un Puerto Montt más limpio
-                                y sostenible. Además, como agradecimiento por su esfuerzo y contribución, se les pagará
-                                por la cantidad de basura que recolecten. ¡Es una gran oportunidad para hacer una
-                                diferencia en nuestra comunidad y al mismo tiempo obtener una recompensa por ello!
-                                ¡Esperamos verlos allí! </p>
+                        <div class="container-suscripcion-eventos">
+                            <div class="row">
+                                <div class="titulo-suscripcion-eventos">
+                                    <h2>Suscribete a nuestro Newsletter</h2>
+                                    <p>
+                                        Recibe las últimas noticias y actualizaciones sobre nuestros
+                                        eventos y servicios.
+                                    </p>
+                                </div>
+
+                                <form action="">
+                                    <input type="email" name="email" id="email-suscripcion" placeholder="Tu Email" />
+                                    <button class="button-suscripcion" onclick="validar_email(event)">
+                                        Suscribirse
+                                    </button>
+                                </form>
+                                <div class="msg-correo-sus">
+                                    <p id="mensaje" class="msg"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="evento">
-                        <div class="fecha-lugar">
-                            <p>Fecha: 27/05/2024</p>
-                            <p>Lugar: Puerto Varas</p>
-                        </div>
-                        <div class="descripcion">
-                            <p>Descripción: Hacemos un llamado a la comunidad de Puerto Varas a unirse a nuestro próximo
-                                evento, donde estaremos limpiando las playas y calles de nuestra hermosa ciudad. Este es
-                                un paso importante hacia un Puerto Varas más limpio y sostenible. Además, como
-                                agradecimiento por su esfuerzo y contribución, se les pagará por la cantidad de basura
-                                que recojan. ¡Es una gran oportunidad para hacer una diferencia en nuestra comunidad y
-                                al mismo tiempo obtener una recompensa por ello! ¡Esperamos verlos allí!</p>
-                        </div>
+                    <div class="col" id="cotiza-ecocashback">
+                        <h2>Cotiza con Nosotros</h2>
+                        <p>
+                            ¿Quires recibir ganacias con tu basura resiclable? Contactate con
+                            nosotros para poder saber cuanto podrias ganar reciclando con
+                            nosotros.
+                        </p>
+                        <form action="">
+                            <div class="form-top">
+                                <input class="relleno-form" type="text" name="nombre" id="nombre-cotiza"
+                                    placeholder="Nombre" />
+                                <input class="relleno-form" type="email" name="email-cotiza" id="email-cotiza"
+                                    placeholder="Email" />
+                            </div>
+                            <div class="form-botton">
+                                <input class="relleno-form" type="text" name="telefono" id="telefono-cotiza"
+                                    placeholder="Teléfono" />
+                                <input class="relleno-form" type="text" name="material" id="material-cotiza"
+                                    placeholder="Material" />
+                            </div>
+                            <div class="font-textarea">
+                                <textarea class="form-control" id="mensaje" placeholder="Mensaje"></textarea>
+                            </div>
+                            <div class="form-text">
+                                <button class="button-suscripcion" onclick="validar_formulario(event)"
+                                    id="enviar-cotizacion">
+                                    Enviar cotizacion
+                                </button>
+                            </div>
+                            <div class="msg-validar-campos">
+                                <p id="mensaje2" class="msg"></p>
+                            </div>
+                        </form>
+                        <article class="container-ubicacion" id="ubicacion-ecocashback">
+                            <h2>Ubicación</h2>
+                            <p>
+                                Estamos ubicados en Puerto Montt, pero también realizamos eventos
+                                en Puerto Varas. Si deseas contactarnos, puedes hacerlo a través
+                                de nuestro correo electrónico o número de teléfono.
+                            </p>
+                            <div id="map" class="map map-home" style="height: 300px; margin-top: 50px"></div>
                     </div>
                 </div>
-            </div>
-            <div class="container-suscripcion-eventos">
-                <div class="row">
-                        <div class="col titulo-suscripcion-eventos">
-                            <h2>Suscribete a nuestro Newsletter</h2>
-                            <p>Recibe las últimas noticias y actualizaciones sobre nuestros eventos y servicios.</p>
-                        </div>
-                        <div class="col form-suscripcion-eventos">
-                            <form action="">
-                                <input type="email" name="email" id="email-suscripcion" placeholder="Tu Email">
-                                <input onclick="validarEmail(email)" type="submit" value="Suscribirse">
-                            </form>
-                        </div>
-                </div>
-            </div>
         </article>
-        <article class="cotiza-ubicacion" id="cotiza-ecocashback">
-            <di class="container-cotiza">
-                <h2>Cotiza con Nosotros</h2>
-                <p>¿Quires recibir ganacias con tu basura resiclable? Contactate con nosotros para poder saber cuanto
-                    podrias ganar reciclando con nosotros. </p>
-                <form action="">
-                    <div class="form-top">
-                        <input class="relleno-form" type="text" name="nombre" id="nombre" placeholder="Nombre">
-                        <input class="relleno-form" type="email" name="email-cotiza" id="email" placeholder="Email">
-                    </div>
-                    <div class="form-botton">
-                        <input class="relleno-form" type="text" name="telefono" id="telefono" placeholder="Teléfono">
-                        <input class="relleno-form" type="text" name="material" id="material" placeholder="Material">
-                    </div>
-                    <div class="font-textarea">
-                        <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                    </div>
-                    <div class="form-text">
-                        <input class="enviar-form" type="submit" value="Enviar">
-                    </div>
-                </form>
-            </di>
-            <article class="container-ubicacion" id="ubicacion-ecocashback">
-                <h2>Ubicación</h2>
-                <p>Estamos ubicados en Puerto Montt, pero también realizamos eventos en Puerto Varas. Si deseas
-                    contactarnos, puedes hacerlo a través de nuestro correo electrónico o número de teléfono. </p>
-                <div class="mapa">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.073013073073!2d-72.9440736846787!3d-41.47136607926147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a6f1b1b1b1b1b%3A0x7b1b1b1b1b1b1b1b!2sPuerto%20Montt%2C%20Los%20Lagos!5e0!3m2!1ses-419!2scl!4v1649240730007!5m2!1ses-419!2scl"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </article>
+        </div>
+        </div>
+        <br>
+        <div class="col">
+            <div class="row">Column</div>
+        </div>
+        </div>
         </article>
     </section>
+
+    <!--                 fin eventos                 -->
+
+    <div class="subir-pagina">
+        <a href="#inicio">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-up" width="37"
+                height="37" viewBox="0 0 24 24" stroke-width="2" stroke="#003E2C" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                    d="M9 20v-8h-3.586a1 1 0 0 1 -.707 -1.707l6.586 -6.586a1 1 0 0 1 1.414 0l6.586 6.586a1 1 0 0 1 -.707 1.707h-3.586v8a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+            </svg>
+        </a>
+    </div>
+
     <footer>
         <div class="conatiner-fluid">
             <div class="row p-5">
@@ -248,7 +350,11 @@
             interval: 5000, // Cambia la velocidad de transición del carrusel (en milisegundos)
             wrap: true // Permite que el carrusel vuelva al principio después de la última diapositiva
         });
+
+
     </script>
+    <script src="./js/mapa.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarmap"></script>
 </body>
 
 </html>
