@@ -161,7 +161,13 @@ col{
     color: var(--verde);
 }
 
+/* Estilos card */
 
+.card-shadow:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra al pasar el mouse */
+    transition: box-shadow 0.3s ease-in-out; /* Animación suave */
+  }
+  
 
 
 /* Footer */
