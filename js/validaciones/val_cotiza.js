@@ -25,7 +25,7 @@ function validar_formulario(event) {
         }, 3000);
         event.preventDefault();
     } else if (!regexTelefono.test(telefono)) {
-        mensaje2.text('El formato del teléfono no es válido');
+        mensaje2.text('El formato del teléfono no es válido <br> Ejemplo: +569 1234 5678');
         mensaje2.css('backgroundColor', '#ff0000');
         $('.msg-validar-campos').css('display', 'block');
         setTimeout(() => {
