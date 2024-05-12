@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilo-principal.css">
     <meta name="google-site-verification" content="Gd9MCIovA2JFHNA4CInROaqd-kYPQgFl9_KlDNKJyeg" />
-    <script src="js/index.js"></script>
+    <script src="js/validaciones/val_cotiza.js"></script>
+    <script src="js/validaciones/val_suscrip.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -235,11 +236,9 @@
 
                                 <form action="https://formsubmit.co/6aced0543484ad6006fc2dc5b2f7a947" method="POST">
                                     <input type="email" name="email" id="email-suscripcion" placeholder="Tu Email" />
-                                    <button class="button-suscripcion" onclick="validar_email(event)">
-                                        Suscribirse
-                                    </button>
-                                    <input type="submit" value="Enviar">
-                                    <input type="hidden" name="_next" value="http://127.0.0.1:5500">
+                                    <input onclick="validar_email(event)" type="submit" value="Suscribirse"
+                                        class="button-suscripcion">
+                                    <input type="hidden" name="_next" value="https://ecocashback.vercel.app">
                                     <input type="hidden" name="_captcha" value="false">
                                 </form>
                                 <div class="msg-correo-sus">
@@ -256,30 +255,31 @@
                             nosotros.
                         </p>
                         <form action="https://formsubmit.co/6aced0543484ad6006fc2dc5b2f7a947" method="POST">
-                            <div class="form-top">
-                                <input class="relleno-form" type="text" name="nombre_cotiza" id="nombre-cotiza"
-                                    placeholder="Nombre" />
-                                <input class="relleno-form" type="email" name="email_cotiza" id="email-cotiza"
-                                    placeholder="Email" />
-                            </div>
-                            <div class="form-botton">
-                                <input class="relleno-form" type="text" name="telefono_cotiza" id="telefono-cotiza"
-                                    placeholder="Teléfono" />
-                                <input class="relleno-form" type="text" name="material_cotiza" id="material-cotiza"
-                                    placeholder="Material" />
-                            </div>
-                            <div class="font-textarea">
-                                <textarea class="form-control" id="mensaje" name="mensaje_cotiza"
-                                    placeholder="Mensaje"></textarea>
-                            </div>
-                            <div class="form-text">
-                                <button type="submit" class="button-suscripcion" onclick="validar_formulario(event)"
-                                    id="enviar-cotizacion">
-                                    Enviar cotizacion
-                                </button>
-                            </div>
+
+                            <input class="relleno-form" type="text" name="nombre_cotiza" id="nombre-cotiza"
+                                placeholder="Nombre" />
+                            <input class="relleno-form" type="email" name="email_cotiza" id="email-cotiza"
+                                placeholder="Email" />
+
+
+                            <input class="relleno-form" type="text" name="telefono_cotiza" id="telefono-cotiza"
+                                placeholder="Teléfono" />
+                            <input class="relleno-form" type="text" name="material_cotiza" id="material-cotiza"
+                                placeholder="Material" />
+
+
+                            <textarea class="form-control" id="mensaje" name="mensaje_cotiza"
+                                placeholder="Mensaje"></textarea>
+
+
+                            <button type="submit" class="button-suscripcion" onclick="validar_formulario(event)"
+                                id="enviar-cotizacion">
+                                Enviar cotizacion
+                            </button>
+                            <!-- Eventos de FormSubmit -->
                             <input type="hidden" name="_next" value="https://ecocashback.vercel.app">
                             <input type="hidden" name="_captcha" value="false">
+
                             <div class="msg-validar-campos">
                                 <p id="mensaje2" class="msg"></p>
                             </div>
@@ -293,16 +293,13 @@
                                 de nuestro correo electrónico o número de teléfono.
                             </p>
                             <div id="map" class="map map-home" style="height: 300px; margin-top: 50px"></div>
-                    </div>
+                        </article>
                 </div>
-        </article>
-        </div>
-        </div>
-        <br>
-        <div class="col">
-            <div class="row">Column</div>
-        </div>
-        </div>
+            </div>
+            <br>
+            <div class="col">
+                <div class="row">Column</div>
+            </div>
         </article>
     </section>
 
