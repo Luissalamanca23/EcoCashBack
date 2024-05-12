@@ -637,4 +637,18 @@ input[type="text"] {
     /* Esto establece un alto mínimo para el contenido de la tarjeta */
 }
 
-/* estilo contactanos */
+/* estilo Servicios */
+
+
+.cont-serv {
+    margin: 10px;
+    margin-bottom: 30px; /* Ajusta este valor según sea necesario */
+    padding: 50px !important;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slick-prev:before, .slick-next:before {
+    color: var(--verde) !important; /* Cambia esto al color que prefieras */
+    font-size: 35px !important; /* Ajusta el tamaño de la flecha */
+}
