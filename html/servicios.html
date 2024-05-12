@@ -107,7 +107,7 @@
   </header>
 
   <body>
-    <div class="container mt-5" id="inicio">
+    <div class="container mt-5 cont-serv" id="inicio">
       <h1 class="text-center mb-5">Nuestros Servicios</h1>
       <div class="card-slider">
         <div class="col-lg-4 col-md-6 col-sm-12">
@@ -231,7 +231,26 @@
           slidesToShow: 3,
           slidesToScroll: 1,
           autoplay: true,
-          autoplaySpeed: 2000
+          autoplaySpeed: 2500,
+          arrows: true, // Habilita las flechas de navegación
+          dots: true, // Habilita los puntos de navegación
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
         });
       });
     </script>
