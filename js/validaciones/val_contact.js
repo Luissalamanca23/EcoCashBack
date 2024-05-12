@@ -3,48 +3,96 @@ function validar_campos_contacto(event) {
     var nombre = $('#nombre').val();
     var email = $('#email').val();
     var mensaje = $('#mensaje').val();
+    var mensaje_nombre = $('#val_nom_contac');
+    var mensaje_correo = $('#val_email_contac');
+    var mensaje_mensaje = $('#val_mensaje_contac');
+    var mensaje_campo = $('#val_camp_msg');
+    var mensaje_validar_c = $('.msg-validar-campos_cont');
+    var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-    if (nombre === '' && email === '') {
-        $('#val_camp_msg').text('Para enviar un mensaje, los campos nombre y correo no pueden estar vacíos');
-        $('#val_camp_msg').css('color', 'red');
+    if (nombre === '' && email === '' && mensaje === '') {
+        mensaje_campo.text('Para enviar un mensaje, los campos nombre, correo y mensaje no pueden estar vacíos');
+        mensaje_validar_c.css('display', 'block');
+        mensaje_campo.css('color', 'white');
+        mensaje_campo.css('backgroundColor', 'red');
+        mensaje_campo.css('padding', '7px');
+        mensaje_campo.css('borderRadius', '15px');
+        mensaje_campo.css('margin-top', '10px');
+        mensaje_campo.css('margin-bottom', '10px');
         console.log('nombre y correo vasios');
         setTimeout(() => {
-            $('#val_camp_msg').text('');
+            mensaje_campo.css('display', 'none');
         }, 3000);
     }
     else if (nombre === '') {
-        $('#val_nom_contac').text('El campo nombre no puede estar vacío');
-        $('#val_nom_contac').css('color', 'red');
+        mensaje_nombre.text('El campo nombre no puede estar vacío');
+        mensaje_validar_c.css('display', 'block');
+        mensaje_nombre.css('color', 'white');
+        mensaje_nombre.css('backgroundColor', 'red');
+        mensaje_nombre.css('padding', '7px');
+        mensaje_nombre.css('borderRadius', '15px');
+        mensaje_nombre.css('margin-top', '10px');
+        mensaje_nombre.css('margin-bottom', '10px');
         console.log('El campo nombre no puede estar vacío');
         setTimeout(() => {
-            $('#val_nom_contac').text('');
+            mensaje_nombre.css('display', 'none');
         }, 3000);
     }
     else if (email === '') {
-        $('#val_email_contac').text('El campo correo no puede estar vacío');
-        $('#val_email_contac').css('color', 'red');
+        mensaje_correo.text('El campo correo no puede estar vacío');
+        mensaje_validar_c.css('display', 'block');
+        mensaje_correo.css('color', 'white');
+        mensaje_correo.css('backgroundColor', 'red');
+        mensaje_correo.css('padding', '7px');
+        mensaje_correo.css('borderRadius', '15px');
+        mensaje_correo.css('margin-top', '10px');
+        mensaje_correo.css('margin-bottom', '10px');
         console.log('El campo correo no puede estar vacío');
         setTimeout(() => {
-            $('#val_email_contac').text('');
+            mensaje_correo.css('display', 'none');
+        }, 3000);
+    }
+    else if (!regex.test(email)) {
+        mensaje_correo.text('El formato de correo no es válido');
+        mensaje_validar_c.css('display', 'block');
+        mensaje_correo.css('color', 'white');
+        mensaje_correo.css('backgroundColor', 'red');
+        mensaje_correo.css('padding', '7px');
+        mensaje_correo.css('borderRadius', '15px');
+        mensaje_correo.css('margin-top', '10px');
+        mensaje_correo.css('margin-bottom', '10px');
+        console.log('El formato de correo no es válido');
+        setTimeout(() => {
+            mensaje_correo.css('display', 'none');
         }, 3000);
     }
     else if (mensaje === '') {
-        $('#val_mensaje_contac').text('El campo mensaje no puede estar vacío');
-        $('#val_mensaje_contac').css('color', 'red');
+        mensaje_mensaje.text('El campo mensaje no puede estar vacío');
+        mensaje_validar_c.css('display', 'block');
+        mensaje_mensaje.css('color', 'white');
+        mensaje_mensaje.css('backgroundColor', 'red');
+        mensaje_mensaje.css('padding', '7px');
+        mensaje_mensaje.css('borderRadius', '15px');
+        mensaje_mensaje.css('margin-top', '10px');
+        mensaje_mensaje.css('margin-bottom', '10px');
         console.log('El campo mensaje no puede estar vacío');
         setTimeout(() => {
-            $('#val_mensaje_contac').text('');
+            mensaje_mensaje.css('display', 'none');
         }, 3000);
     }
     else {
-        $('#val_nom_contac').text('');
-        $('#val_email_contac').text('');
-        $('#val_mensaje_contac').text('');
         console.log('Mensaje enviado');
-        $('#val_camp_msg').text('Mensaje enviado');
-        $('#val_camp_msg').css('color', 'green');
+        mensaje_mensaje.text('Mensaje enviado');
+        mensaje_validar_c.css('display', 'block');
+        mensaje_mensaje.css('color', 'white');
+        mensaje_mensaje.css('backgroundColor', 'green');
+        mensaje_mensaje.css('padding', '7px');
+        mensaje_mensaje.css('borderRadius', '15px');
+        mensaje_mensaje.css('margin-top', '10px');
+        mensaje_mensaje.css('margin-bottom', '10px');
         setTimeout(() => {
-            $('#val_camp_msg').text('');
+            mensaje_mensaje.css('display', 'none');
         }, 3000);
+
     }
 }
