@@ -116,7 +116,8 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="fotos/basureros.jpg" class="d-block w-100" alt="Imagen 1 slider (Imagen de basurero municipal)">
+                    <img src="fotos/basureros.jpg" class="d-block w-100"
+                        alt="Imagen 1 slider (Imagen de basurero municipal)">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Nuestra Ubicacion</h5>
                         <p class="parrafo-carusel">Nos encontramos en el corazón de Puerto Montt, una ciudad llena de
@@ -128,7 +129,8 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="fotos/personal-anotando.jpg" class="d-block w-100" alt="Imagen 2 slider (Imagen de una personal-anotando en un basurero)">
+                    <img src="fotos/personal-anotando.jpg" class="d-block w-100"
+                        alt="Imagen 2 slider (Imagen de una personal-anotando en un basurero)">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Sobre Nosotros</h5>
                         <p class="parrafo-carusel">Somos EcoCashBack, una organización comprometida con la promoción del
@@ -141,7 +143,8 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="fotos/personal_trabajando.png" class="d-block w-100" alt="Imagen 3 slider (Imagen de una personal ordenando basura)">
+                    <img src="fotos/personal_trabajando.png" class="d-block w-100"
+                        alt="Imagen 3 slider (Imagen de una personal ordenando basura)">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Cotiza con nosotros</h5>
                         <p class="parrafo-carusel">En EcoCashBack, creemos en el valor de los desechos reciclables. Si
@@ -155,7 +158,8 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="fotos/Imagen-banda-con-basura.jpg" class="d-block w-100" alt="Imagen 4 slider (Imagen banda trasportadora con basura)">
+                    <img src="fotos/Imagen-banda-con-basura.jpg" class="d-block w-100"
+                        alt="Imagen 4 slider (Imagen banda trasportadora con basura)">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Nuestros Eventos</h5>
                         <p class="parrafo-carusel">Estamos emocionados de compartir que estamos planeando una serie de
@@ -189,9 +193,9 @@
                         <h2>Proximos Eventos</h2>
                         <div class="fechas-eventos">
                             <h3>Eventos</h3>
-                            <div class="evento">
+                            <div id="evento" class="evento">
                                 <div class="fecha-lugar">
-                                    <p>Fecha: 11/04/2024</p>
+                                    <p id="fecha-evento">Fecha: 11/04/2024</p>
                                     <p>Lugar: Puerto Montt</p>
                                 </div>
                                 <div class="descripcion">
@@ -207,9 +211,9 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="evento">
+                            <div id="evento" class="evento">
                                 <div class="fecha-lugar">
-                                    <p>Fecha: 27/05/2024</p>
+                                    <p id="fecha-evento">Fecha: 27/05/2024</p>
                                     <p>Lugar: Puerto Varas</p>
                                 </div>
                                 <div class="descripcion">
@@ -297,12 +301,12 @@
                             </p>
                             <div id="map" class="map map-home" style="height: 300px; margin-top: 50px"></div>
                         </article>
+                    </div>
                 </div>
-            </div>
-            <br>
-            <div class="col">
-                <div class="row">Column</div>
-            </div>
+                <br>
+                <div class="col">
+                    <div class="row">Column</div>
+                </div>
         </article>
     </section>
 
@@ -357,18 +361,51 @@
         </div>
         <p class="derechos">&copy; 2024 EcoCashBack - Todos los derechos reservados.</p>
     </footer>
+    <script>
+        // Obtén la fecha del evento
+        var fechaEvento = document.getElementById('fecha-evento').innerText.split(': ')[1];
 
+        // Convierte la fecha del evento a un objeto Date
+        var fechaEventoDate = new Date(fechaEvento.split('/')[2], fechaEvento.split('/')[1] - 1, fechaEvento.split('/')[0]);
+
+        // Obtén la fecha actual
+        var fechaActual = new Date();
+
+        // Compara las fechas
+        if (fechaEventoDate < fechaActual) {
+            // Si la fecha del evento ya ha pasado, oscurece el div de eventos y muestra un mensaje
+            var eventoDiv = document.getElementById('evento');
+            eventoDiv.style.backgroundColor = 'var(--verde)'; // Cambia esto al color que quieras
+            eventoDiv.style.color = '#fff'; // Cambia esto al color que quieras
+            eventoDiv.style.position = 'relative'; // Asegúrate de que el div del evento tiene una posición relativa
+
+            var fechaLugar = eventoDiv.querySelector('.fecha-lugar');
+
+            // Crea un nuevo elemento para el mensaje
+            var mensaje = document.createElement('p');
+            mensaje.innerText = 'Evento ya realizado!';
+            mensaje.style.position = 'absolute';
+            mensaje.style.top = '0';
+            mensaje.style.left = '0';
+            mensaje.style.color = '#fff'; // Cambia esto al color que quieras
+            mensaje.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Cambia esto al color que quieras
+            mensaje.style.padding = '10px';
+            mensaje.style.borderRadius = '7px';
+            fechaLugar.style.marginTop = '40px'; // Ajusta el margen superior para que el mensaje no se superponga
+
+            // Agrega el mensaje al div del evento
+            eventoDiv.appendChild(mensaje);
+        }
+    </script>
     <script>
         var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleControls'), {
             interval: 5000, // Cambia la velocidad de transición del carrusel (en milisegundos)
             wrap: true // Permite que el carrusel vuelva al principio después de la última diapositiva
         });
-
-
     </script>
-    <script src="./js/mapa.js"></script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarmap"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarmap">
+        </script>
 </body>
 
 </html>
