@@ -12,7 +12,7 @@
 * {
 
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -546,55 +546,7 @@ input[type="text"] {
     padding-bottom: 30px;
 }
 
-.contenedor-mision,
-.contenedor-vision,
-.contenedor-valores {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    color: var(--verde);
-    border: 2px solid var(--verde) !important;
-    border-radius: 10px;
-    width: 50%;
-    margin: 30px;
-    padding-bottom: 15px;
-}
 
-.contenedor-mision,
-.contenedor-vision {
-    padding: 0 40px;
-}
-
-.contenedor-mision-vision {
-    display: flex;
-}
-
-
-.contenedor-seccion-valores {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.contenedor-mision-vision h2 {
-    padding-top: 20px;
-}
-
-.contenedor-valores h2 {
-    padding-top: 20px;
-}
-
-.contenedor-mision-vision p {
-    padding-bottom: 20px;
-    color: var(--verde);
-}
-
-.lista-valores {
-    padding: 0 40px;
-    padding-bottom: 20px;
-}
 
 
 .cita-nosotros {
@@ -602,7 +554,87 @@ input[type="text"] {
     padding-bottom: 20px;
     text-align: center;
     color: var(--verde);
+    font-style: italic;
 }
+
+#nosotros-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#nosotros-mision-vision {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#nosotros-mision,
+#nosotros-vision {
+    width: 45%;
+    /* Ajusta esto según sea necesario */
+    margin-bottom: 20px;
+    /* Añade margen en la parte inferior */
+}
+
+#nosotros-mision,
+#nosotros-vision,
+#nosotros-valores {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+}
+
+.cont-nosotros{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+#nosotros-valores {
+    width: 50%;
+    margin-top: 20px;
+    /* Añade margen en la parte superior */
+}
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+    #nosotros-mision-vision {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nosotros-mision,
+    #nosotros-vision {
+        width: 100%;
+        margin-bottom: 10px !important;
+        /* Ajusta el margen en la parte inferior para pantallas pequeñas */
+    }
+
+    #nosotros-valores {
+        width: 100%;
+        margin-top: 10px !important;
+        /* Ajusta el margen en la parte superior para pantallas pequeñas */
+    }
+    .cita-nosotros {
+        padding: 20px;
+    }
+}
+
+  
+  /* Estilos para pantallas de tablet */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    #nosotros-valores {
+      width: 80%;
+    }
+  }
+
 
 
 /* Estilo subir pagina */
@@ -649,13 +681,26 @@ input[type="text"] {
 
 .cont-serv {
     margin: 10px;
-    margin-bottom: 30px; /* Ajusta este valor según sea necesario */
+    margin-bottom: 30px;
+    /* Ajusta este valor según sea necesario */
     padding: 50px !important;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.slick-prev:before, .slick-next:before {
-    color: var(--verde) !important; /* Cambia esto al color que prefieras */
-    font-size: 35px !important; /* Ajusta el tamaño de la flecha */
+.slick-prev:before,
+.slick-next:before {
+    color: var(--verde) !important;
+    /* Cambia esto al color que prefieras */
+    font-size: 35px !important;
+    /* Ajusta el tamaño de la flecha */
+}
+
+
+
+/* Estilo sobre nosotros */
+
+#nosotros-mision #nosotros-vision {
+    padding: 40px 30px !important;
+    margin: 0 20px !important;
 }
