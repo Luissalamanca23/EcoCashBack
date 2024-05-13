@@ -136,6 +136,7 @@ col {
     display: flex;
     justify-content: center !important;
     /* Esto alinea los elementos horizontalmente en el centro */
+    padding: 0 30px;
 }
 
 .carousel-item .texto-carusel {
@@ -195,6 +196,12 @@ col {
 .texto-carusel a:hover {
     background-color: white;
     color: var(--verde);
+}
+
+
+
+.carousel-item img {
+    border-radius: 30px;
 }
 
 /* Estilos card */
