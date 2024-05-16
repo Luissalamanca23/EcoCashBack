@@ -14,7 +14,7 @@ function validar_email(event) {
         }, 3000);
     } else if (regex.test(email)) {
         console.log('El correo electrónico es válido');
-        mensaje.text('Te as suscrito correctamente a nuestro boletín');
+        mensaje.text('Te suscribiste correctamente a nuestro boletín');
         $('.msg-correo-sus').css('display', 'block');
         mensaje.css('backgroundColor', '#42ac25c0');
     } else {
