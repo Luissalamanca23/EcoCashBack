@@ -727,3 +727,38 @@ input[type="text"] {
     padding: 40px 30px !important;
     margin: 0 20px !important;
 }
+
+
+
+
+/* estilo contactanos */
+
+
+.titulo_cont{
+    padding-top: 40px !important;
+    padding-bottom: 20px;
+}
+
+body .sec_cont {
+    background-color: var(--verde) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 20px;
+    color: var(--blanco);
+}
+
+.sec_cont h1{
+    padding: 20px 0;
+}
+
+.sec_cont{
+    padding-bottom: 20px;
+}
+
+.espacio-nav p{
+    padding-bottom: 20px;
+}
+
+.espacio-nav{
+    padding-bottom: 40px;
+}
