@@ -268,7 +268,7 @@ footer .footer-link-nombre {
 }
 
 */
-.fechas-eventos .evento {
+.fechas-eventos .evento_con_fech {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -285,9 +285,16 @@ footer .footer-link-nombre {
     padding-top: 10px;
 }
 
-.evento .descripcion p {
+.evento_con_fech .descripcion p {
     padding: 3%;
 }
+
+  /* Estilos para pantallas de tablet */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    .descripcion p{
+        font-size: 14px;
+    }
+  }
 
 .container-suscripcion-eventos {
     display: flex;

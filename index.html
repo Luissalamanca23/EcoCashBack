@@ -193,9 +193,9 @@
                         <h2>Proximos Eventos</h2>
                         <div class="fechas-eventos">
                             <h3>Eventos</h3>
-                            <div id="evento" class="evento">
+                            <div class="evento_con_fech" class="evento">
                                 <div class="fecha-lugar">
-                                    <p id="fecha-evento">Fecha: 11/04/2024</p>
+                                    <p class="fecha-evento">Fecha: 11/04/2024</p>
                                     <p>Lugar: Puerto Montt</p>
                                 </div>
                                 <div class="descripcion">
@@ -211,9 +211,9 @@
                                     </p>
                                 </div>
                             </div>
-                            <div id="evento" class="evento">
+                            <div class="evento_con_fech" class="evento">
                                 <div class="fecha-lugar">
-                                    <p id="fecha-evento">Fecha: 27/05/2024</p>
+                                    <p class="fecha-evento">Fecha: 27/05/2024</p>
                                     <p>Lugar: Puerto Varas</p>
                                 </div>
                                 <div class="descripcion">
@@ -264,12 +264,16 @@
                         <form action="https://formsubmit.co/6aced0543484ad6006fc2dc5b2f7a947" method="POST">
 
                             <div class="form-group">
-                                <input class="relleno-form" type="text" name="nombre_cotiza" id="nombre-cotiza" placeholder="Nombre" />
-                                <input class="relleno-form" type="email" name="email_cotiza" id="email-cotiza" placeholder="Email" />
+                                <input class="relleno-form" type="text" name="nombre_cotiza" id="nombre-cotiza"
+                                    placeholder="Nombre" />
+                                <input class="relleno-form" type="email" name="email_cotiza" id="email-cotiza"
+                                    placeholder="Email" />
                             </div>
                             <div class="form-group">
-                                <input class="relleno-form" type="text" name="telefono_cotiza" id="telefono-cotiza" placeholder="Teléfono" />
-                                <input class="relleno-form" type="text" name="material_cotiza" id="material-cotiza" placeholder="Material" />
+                                <input class="relleno-form" type="text" name="telefono_cotiza" id="telefono-cotiza"
+                                    placeholder="Teléfono" />
+                                <input class="relleno-form" type="text" name="material_cotiza" id="material-cotiza"
+                                    placeholder="Material" />
                             </div>
 
 
@@ -302,7 +306,7 @@
                     </div>
                 </div>
             </div>
-                <!-- <br>
+            <!-- <br>
                 <div class="col">
                     <div class="row">Column</div>
                 </div> -->
@@ -361,40 +365,46 @@
         <p class="derechos">&copy; 2024 EcoCashBack - Todos los derechos reservados.</p>
     </footer>
     <script>
-        // Obtén la fecha del evento
-        var fechaEvento = document.getElementById('fecha-evento').innerText.split(': ')[1];
+        // Obtén todas las fechas de los eventos
+        var fechasEvento = document.querySelectorAll('.fecha-evento');
 
-        // Convierte la fecha del evento a un objeto Date
-        var fechaEventoDate = new Date(fechaEvento.split('/')[2], fechaEvento.split('/')[1] - 1, fechaEvento.split('/')[0]);
+        // Itera sobre cada fecha de evento
+        fechasEvento.forEach(function (fechaEventoElemento) {
+            // Extrae la fecha del texto del elemento
+            var fechaEvento = fechaEventoElemento.innerText.split(': ')[1];
 
-        // Obtén la fecha actual
-        var fechaActual = new Date();
+            // Convierte la fecha del evento a un objeto Date
+            var fechaEventoDate = new Date(fechaEvento.split('/')[2], fechaEvento.split('/')[1] - 1, fechaEvento.split('/')[0]);
 
-        // Compara las fechas
-        if (fechaEventoDate < fechaActual) {
-            // Si la fecha del evento ya ha pasado, oscurece el div de eventos y muestra un mensaje
-            var eventoDiv = document.getElementById('evento');
-            eventoDiv.style.backgroundColor = 'var(--verde)'; // Cambia esto al color que quieras
-            eventoDiv.style.color = '#fff'; // Cambia esto al color que quieras
-            eventoDiv.style.position = 'relative'; // Asegúrate de que el div del evento tiene una posición relativa
+            // Obtén la fecha actual
+            var fechaActual = new Date();
 
-            var fechaLugar = eventoDiv.querySelector('.fecha-lugar');
+            // Compara las fechas
+            if (fechaEventoDate < fechaActual) {
+                // Si la fecha del evento ya ha pasado, oscurece el div de eventos y muestra un mensaje
+                var elemento = fechaEventoElemento.closest('.evento_con_fech');
+                elemento.style.backgroundColor = 'var(--verde)'; // Cambia esto al color que quieras
+                elemento.style.color = '#fff'; // Cambia esto al color que quieras
+                elemento.style.position = 'relative'; // Asegúrate de que el div del evento tiene una posición relativa
 
-            // Crea un nuevo elemento para el mensaje
-            var mensaje = document.createElement('p');
-            mensaje.innerText = 'Evento ya realizado!';
-            mensaje.style.position = 'absolute';
-            mensaje.style.top = '0';
-            mensaje.style.left = '0';
-            mensaje.style.color = '#fff'; // Cambia esto al color que quieras
-            mensaje.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Cambia esto al color que quieras
-            mensaje.style.padding = '10px';
-            mensaje.style.borderRadius = '7px';
-            fechaLugar.style.marginTop = '40px'; // Ajusta el margen superior para que el mensaje no se superponga
+                var fechaLugar = elemento.querySelector('.fecha-lugar');
 
-            // Agrega el mensaje al div del evento
-            eventoDiv.appendChild(mensaje);
-        }
+                // Crea un nuevo elemento para el mensaje
+                var mensaje = document.createElement('p');
+                mensaje.innerText = 'Evento ya realizado!';
+                mensaje.style.position = 'absolute';
+                mensaje.style.top = '0';
+                mensaje.style.left = '0';
+                mensaje.style.color = '#fff'; // Cambia esto al color que quieras
+                mensaje.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Cambia esto al color que quieras
+                mensaje.style.padding = '10px';
+                mensaje.style.borderRadius = '7px';
+                fechaLugar.style.marginTop = '40px'; // Ajusta el margen superior para que el mensaje no se superponga
+
+                // Agrega el mensaje al div del evento
+                elemento.appendChild(mensaje);
+            }
+        });
     </script>
     <script>
         var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleControls'), {
