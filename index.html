@@ -38,7 +38,10 @@
 
 <body>
     <div id="mensaje-centro">
-        <p>¡Gracias por visitarnos! Nuestro sitio web está actualmente en construcción 🚧. Estamos trabajando arduamente para ofrecerte una experiencia mejor y más intuitiva. ¡Vuelve pronto para ver las actualizaciones!</p>
+        <p>¡Gracias por visitarnos! Nuestro sitio web está actualmente en construcción 🚧. Estamos trabajando arduamente
+            para ofrecerte una experiencia mejor y más intuitiva. ¡Vuelve pronto para ver las actualizaciones! <br>Si
+            quieres más información, no dudes en contactarnos a <a class="correo-mensaje"
+                href="mailto:contacto@ecocashback.cl">contacto@ecocashback.cl</a> </p>
         <button id="cerrar-mensaje">Cerrar</button>
     </div>
     <header>
@@ -421,8 +424,8 @@
         </script>
 
     <script>
-        document.getElementById('cerrar-mensaje').addEventListener('click', function() {
-        document.getElementById('mensaje-centro').style.display = 'none';
+        document.getElementById('cerrar-mensaje').addEventListener('click', function () {
+            document.getElementById('mensaje-centro').style.display = 'none';
         });
     </script>
 </body>

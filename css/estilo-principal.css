@@ -50,6 +50,31 @@ body {
 #cerrar-mensaje:hover {
     background-color: #2b5274;
 }
+#mensaje-centro {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 62, 44, 0.7);
+    color: var(--crema);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 1000;
+    width: 80%; /* Añade un ancho por defecto */
+    max-width: 500px; /* Añade un ancho máximo */
+}
+.correo-mensaje {
+    color: var(--crema);
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    #mensaje-centro {
+        padding: 20px; /* Reduce el padding en pantallas pequeñas */
+        width: 90%; /* Aumenta el ancho en pantallas pequeñas */
+    }
+}
 
 ::selection {
     background-color: var(--verde);
