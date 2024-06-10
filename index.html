@@ -37,6 +37,10 @@
 </head>
 
 <body>
+    <div id="mensaje-centro">
+        <p>¡Gracias por visitarnos! Nuestro sitio web está actualmente en construcción 🚧. Estamos trabajando arduamente para ofrecerte una experiencia mejor y más intuitiva. ¡Vuelve pronto para ver las actualizaciones!</p>
+        <button id="cerrar-mensaje">Cerrar</button>
+    </div>
     <header>
         <nav class="container text-center nav_regular">
             <div class="row">
@@ -415,6 +419,12 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarmap">
         </script>
+
+    <script>
+        document.getElementById('cerrar-mensaje').addEventListener('click', function() {
+        document.getElementById('mensaje-centro').style.display = 'none';
+        });
+    </script>
 </body>
 
 </html>
