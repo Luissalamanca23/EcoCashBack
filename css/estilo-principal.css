@@ -22,6 +22,35 @@ body {
     background-color: var(--gris) !important;
 }
 
+#mensaje-centro {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 62, 44, 0.7);
+    color: var(--crema);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+#cerrar-mensaje {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #FFFFFF;
+    background-color: #33628c;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#cerrar-mensaje:hover {
+    background-color: #2b5274;
+}
+
 ::selection {
     background-color: var(--verde);
     color: var(--blanco);
