@@ -332,6 +332,32 @@
                     d="M9 20v-8h-3.586a1 1 0 0 1 -.707 -1.707l6.586 -6.586a1 1 0 0 1 1.414 0l6.586 6.586a1 1 0 0 1 -.707 1.707h-3.586v8a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
             </svg>
         </a>
+        </div>
+        <div class="chat_bot">
+            <main>
+                <ul>
+                  <li class="loading">
+                    <i></i>
+                    <h4>Cargando...</h4>
+                    <h5>Esto puede tardar un poco. Paciencia.</h5>
+                  </li>
+                </ul>
+              </main>
+            
+              <form>
+                <input placeholder="Escribe tu mensaje aquí...">
+                <button disabled>Enviar</button>
+              </form>
+            
+              <small>&nbsp;</small>
+            
+              <template id="message-template">
+                <li class="message">
+                  <span></span>
+                  <p></p>
+                </li>
+              </template>
+        </div>
     </div>
 
     <footer>
