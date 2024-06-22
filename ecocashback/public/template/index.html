@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,11 +16,11 @@
     <title>EcoCashBack</title>
     <meta name="description"
         content="EcoCashBack es una organización comprometida con la promoción del reciclaje y la sostenibilidad en nuestra comunidad.">
-    <link rel="icon" href="fotos/logo-ecocashback.jpeg">
-    <link rel="preload" href="css/normalize.css" as="style">
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/estilo-principal.css">
+        <link rel="stylesheet" href="{% static 'img/logo-ecocashback.jpeg' %}">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/estilo-principal.css' %}">
     <meta name="google-site-verification" content="Gd9MCIovA2JFHNA4CInROaqd-kYPQgFl9_KlDNKJyeg" />
     <script src="js/validaciones/val_cotiza.js"></script>
     <script src="js/validaciones/val_suscrip.js"></script>
@@ -48,7 +49,7 @@
         <nav class="container text-center nav_regular">
             <div class="row">
                 <div class="col">
-                    <img class="logo-ecocashback" src="fotos/logo-ecocashback.jpeg" alt="Logo-EcoCashBack">
+                    <img class="logo-ecocashback" src="{% static 'img/logo-ecocashback.jpeg' %}" alt="Logo-EcoCashBack">
                 </div>
                 <div class="col">
                     <a href="#">Inicio</a>
@@ -78,7 +79,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary nav_celular">
             <div class="container-fluid cel-header">
                 <div class="col">
-                    <img class="logo-ecocashback" src="fotos/logo-ecocashback.jpeg" alt="Logo-EcoCashBack">
+                    <img class="logo-ecocashback" src="{% static 'img/logo-ecocashback.jpeg' %}" alt="Logo-EcoCashBack">
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,7 +124,7 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="fotos/basureros.jpg" class="d-block w-100"
+                    <img src="{% static 'img/basureros.jpg' %}" class="d-block w-100"
                         alt="Imagen 1 slider (Imagen de basurero municipal)">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Nuestra Ubicacion</h5>
@@ -136,7 +137,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="fotos/personal-anotando.jpg" class="d-block w-100"
+                    <img src="{% static 'img/personal-anotando.jpg' %}" class="d-block w-100"
                         alt="Imagen 2 slider (Imagen de una personal-anotando en un basurero)">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Sobre Nosotros</h5>
@@ -150,7 +151,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="fotos/personal_trabajando.png" class="d-block w-100"
+                    <img src="{% static 'img/personal_trabajando.png' %}" class="d-block w-100"
                         alt="Imagen 3 slider (Imagen de una personal ordenando basura)">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Cotiza con nosotros</h5>
@@ -165,7 +166,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="fotos/personas recolectando.png" class="d-block w-100"
+                    <img src="{% static 'img/personas recolectando.png' %}" class="d-block w-100"
                         alt="Imagen 4 slider (Imagen personas recolectamdo)">
                     <div class="carousel-caption d-none d-md-block texto-carusel">
                         <h5>Nuestros Eventos</h5>
