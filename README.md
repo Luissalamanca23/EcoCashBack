@@ -16,3 +16,4 @@ Technologies used in the project:
 
 *   Bootstrap
 *   Vercel
+*   DJango
