@@ -977,3 +977,38 @@ body .sec_cont {
       transform: rotate(360deg)
     }
   }
+
+.chat_bot {
+    /* Posiciona el chatbot en la esquina inferior derecha de la pantalla */
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+
+    /* Ajusta el tamaño del chatbot */
+    width: 450px;
+    height: 500px;
+
+    /* Añade una transición para el cambio de opacidad */
+    transition: opacity 0.5s;
+}
+
+.chat_bot_hidden {
+    /* Oculta el chatbot al hacerlo completamente transparente */
+    opacity: 0;
+
+    /* Evita que el chatbot oculto pueda ser clicado */
+    pointer-events: none;
+}
+
+.open-chatbot-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
