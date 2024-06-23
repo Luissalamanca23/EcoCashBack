@@ -7,25 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Luis Salamanca-(Luissalamnaca23)">
     <meta name="author" content="Pedro Barrientos-(PeyoBv)">
-    <meta name="keywords"
-        content="EcoCashBack, reciclaje, sostenibilidad, Puerto Montt, Puerto Varas, reciclaje, reciclaje de basura, reciclaje de plástico, reciclaje de papel, reciclaje de vidrio, reciclaje de cartón, reciclaje de metal, reciclaje de aluminio, reciclaje de electrónicos, reciclaje de baterías, reciclaje de pilas, reciclaje de aceite, reciclaje de ropa, reciclaje de zapatos, reciclaje de juguetes, reciclaje de muebles, reciclaje de electrodomésticos, reciclaje de madera, reciclaje de neumáticos, reciclaje de envases, reciclaje de latas, reciclaje de botellas, reciclaje de plástico PET, reciclaje de plástico HDPE, reciclaje de plástico LDPE, reciclaje de plástico PVC, reciclaje de plástico PP, reciclaje de plástico PS, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE">
+    <meta name="keywords" content="EcoCashBack, reciclaje, sostenibilidad, Puerto Montt, Puerto Varas">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ecocashback.com">
-    <meta property="og:image" content="fotos/logo-ecocashback.jpeg">
+    <meta property="og:url" content="https://ecocashback.cl">
+    <meta property="og:image" content="{% static 'img/logo-ecocashback.jpeg' %}">
     <meta property="og:title" content="EcoCashBack">
     <title>EcoCashBack</title>
     <meta name="description"
         content="EcoCashBack es una organización comprometida con la promoción del reciclaje y la sostenibilidad en nuestra comunidad.">
-        <link rel="stylesheet" href="{% static 'img/logo-ecocashback.jpeg' %}">
-        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-        <link rel="stylesheet" href="{% static 'css/estilo-principal.css' %}">
+    <link rel="stylesheet" href="{% static 'img/logo-ecocashback.jpeg' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilo-principal.css' %}">
     <meta name="google-site-verification" content="Gd9MCIovA2JFHNA4CInROaqd-kYPQgFl9_KlDNKJyeg" />
-    <script src="js/validaciones/val_cotiza.js"></script>
-    <script src="js/validaciones/val_suscrip.js"></script>
-    <script src="./js/mapa.js"></script>
-    <script src="js/validaciones/val_fecha_evento.js"></script>
+    <script src="{% static 'js/validaciones/val_cotiza.js' %}"></script>
+    <script src="{% static 'js/validaciones/val_suscrip.js' %}"></script>
+
+    <script src="{% static 'js/mapa.js' %}"></script>
+    <script src="{% static 'js/validaciones/val_fecha_evento.js' %}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -55,16 +54,16 @@
                     <a href="#">Inicio</a>
                 </div>
                 <div class="col">
-                    <a href="html/servicios.html">Servicios</a>
+                    <a href="">Servicios</a>
                 </div>
                 <div class="col">
-                    <a href="html/sobre-nosotros.html">Sobre Nosotros</a>
+                    <a href="">Sobre Nosotros</a>
                 </div>
                 <div class="col">
-                    <a href="html/contactanos.html">Contactanos</a>
+                    <a href="">Contactanos</a>
                 </div>
                 <div class="col">
-                    <a href="html/login.html">
+                    <a href="">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user icon-user-nav"
                             width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -91,17 +90,17 @@
                             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="html/servicios.html">Servicios</a>
+                            <a class="nav-link" href="">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="html/sobre-nosotros.html">Sobre Nosotros</a>
+                            <a class="nav-link" href="">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="html/contactanos.html">Contactanos</a>
+                            <a class="nav-link" href="">Contactanos</a>
                         </li>
                         <li class="nav-item">
                             <div class="col">
-                                <a href="html/login.html">
+                                <a href="">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-user icon-user-nav" width="44" height="44"
                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
@@ -198,67 +197,47 @@
             <div class="container text-center">
                 <div class="row" id="contenedor">
                     <div class="col" id="eventos-ecocashback">
-                        <h2>Proximos Eventos</h2>
+                        <h2>Próximos Eventos</h2>
                         <div class="fechas-eventos">
                             <h3>Eventos</h3>
-                            <div class="evento_con_fech" class="evento">
-                                <div class="fecha-lugar">
-                                    <p class="fecha-evento">Fecha: 11/04/2024</p>
-                                    <p>Lugar: Puerto Montt</p>
+                            {% if eventos %}
+                                {% for evento in eventos %}
+                                <div class="evento_con_fech" class="evento">
+                                    <div class="fecha-lugar">
+                                        <p class="fecha-evento">Fecha: {{ evento.fecha|date:"d/m/Y H:i" }}</p>
+                                        <p>Lugar: {{ evento.ubicacion }}</p>
+                                        <p>Comuna: {{ evento.comuna.nombre }}</p>
+                                    </div>
+                                    <div class="descripcion">
+                                        <p>{{ evento.descripcion }}</p>
+                                    </div>
                                 </div>
-                                <div class="descripcion">
-                                    <p>
-                                        Descripción: Llamamos a la comunidad de Puerto Montt a nuestro
-                                        próximo evento en donde recolectaremos basura reciclable. Este
-                                        es un gran paso hacia un Puerto Montt más limpio y sostenible.
-                                        Además, como agradecimiento por su esfuerzo y contribución, se
-                                        les pagará por la cantidad de basura que recolecten. ¡Es una
-                                        gran oportunidad para hacer una diferencia en nuestra
-                                        comunidad y al mismo tiempo obtener una recompensa por ello!
-                                        ¡Esperamos verlos allí!
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="evento_con_fech" class="evento">
-                                <div class="fecha-lugar">
-                                    <p class="fecha-evento">Fecha: 27/05/2024</p>
-                                    <p>Lugar: Puerto Varas</p>
-                                </div>
-                                <div class="descripcion">
-                                    <p>
-                                        Descripción: Hacemos un llamado a la comunidad de Puerto Varas
-                                        a unirse a nuestro próximo evento, donde estaremos limpiando
-                                        las playas y calles de nuestra hermosa ciudad. Este es un paso
-                                        importante hacia un Puerto Varas más limpio y sostenible.
-                                        Además, como agradecimiento por su esfuerzo y contribución, se
-                                        les pagará por la cantidad de basura que recojan. ¡Es una gran
-                                        oportunidad para hacer una diferencia en nuestra comunidad y
-                                        al mismo tiempo obtener una recompensa por ello! ¡Esperamos
-                                        verlos allí!
-                                    </p>
-                                </div>
-                            </div>
+                                {% endfor %}
+                            {% else %}
+                                <p>No hay eventos disponibles.</p>
+                            {% endif %}
                         </div>
                         <div class="container-suscripcion-eventos">
                             <div class="row">
-                                <div class="titulo-suscripcion-eventos">
-                                    <h2>Suscribete a nuestro Newsletter</h2>
-                                    <p>
-                                        Recibe las últimas noticias y actualizaciones sobre nuestros
-                                        eventos y servicios.
-                                    </p>
-                                </div>
-
-                                <form action="https://formsubmit.co/6aced0543484ad6006fc2dc5b2f7a947" method="POST">
-                                    <input type="email" name="email" id="email-suscripcion" placeholder="Tu Email" />
-                                    <input onclick="validar_email(event)" type="submit" value="Suscribirse"
-                                        class="button-suscripcion">
-                                    <input type="hidden" name="_next" value="https://ecocashback.vercel.app">
-                                    <input type="hidden" name="_captcha" value="false">
-                                </form>
-                                <div class="msg-correo-sus">
-                                    <p id="mensaje" class="msg"></p>
-                                </div>
+                                <section id="suscribirse">
+                                    <div class="container text-center">
+                                        <h2>Suscríbete a nuestro Newsletter</h2>
+                                        <p>Recibe las últimas noticias y actualizaciones sobre nuestros eventos y servicios.</p>
+                                        <form id="form-suscripcion" method="POST" action="{% url 'agregar_suscripcion' %}">
+                                            {% csrf_token %}
+                                            <input type="email" name="email" id="email-suscripcion" placeholder="Tu Email" />
+                                            <select name="tipo_suscripcion">
+                                                <option value="Eventos">Eventos</option>
+                                                <option value="Novedades">Novedades</option>
+                                                <option value="Ambos">Ambos</option>
+                                            </select>
+                                            <input type="submit" value="Suscribirse" class="button-suscripcion" id="boton-suscripcion">
+                                        </form>
+                                        <div class="msg-correo-sus">
+                                            <p id="mensaje" class="msg"></p>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </div>
@@ -294,7 +273,7 @@
                                 Enviar cotizacion
                             </button>
                             <!-- Eventos de FormSubmit -->
-                            <input type="hidden" name="_next" value="https://ecocashback.vercel.app">
+                            <input type="hidden" name="_next" value="https://ecocashback.cl">
                             <input type="hidden" name="_captcha" value="false">
 
                             <div class="msg-validar-campos">
@@ -366,7 +345,7 @@
                         <p>Teléfono: +56 9 9999 9999</p>
                     </div>
                     <div class="mb-2 footer-links">
-                        <p>Email: info@ecocashback.com</p>
+                        <a href="mailto:contacto@ecocashback.cl"><p>Email: info@ecocashback.com</p></a>
                     </div>
                 </div>
             </div>
@@ -424,6 +403,12 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarmap">
         </script>
+    <script>
+        document.getElementById('cerrar-mensaje').addEventListener('click', function () {
+            document.getElementById('mensaje-centro').style.display = 'none';
+        });
+    </script>
+
 </body>
 
 </html>
