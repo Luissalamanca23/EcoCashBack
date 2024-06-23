@@ -1,36 +1,53 @@
-function validar_email(event) {
-    var email = $('#email-suscripcion').val();
-    var regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-    var mensaje = $('#mensaje');
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('form-suscripcion');
+    const emailInput = document.getElementById('email-suscripcion');
+    const messageContainer = document.getElementById('mensaje');
 
-    if (email.trim() === '') {
-        console.log('El campo de correo electrónico está vacío');
-        mensaje.text('El campo de correo electrónico no puede estar vacío');
-        $('.msg-correo-sus').css('display', 'block');
-        mensaje.css('backgroundColor', '#ff0000');
-        event.preventDefault(); // Evita el envío del formulario si el campo de correo electrónico está vacío
-        setTimeout(() => {
-            $('.msg-correo-sus').css('display', 'none');
-        }, 3000);
-    } else if (regex.test(email)) {
-        console.log('El correo electrónico es válido');
-        mensaje.text('Te suscribiste correctamente a nuestro boletín');
-        $('.msg-correo-sus').css('display', 'block');
-        mensaje.css('backgroundColor', '#42ac25c0');
-    } else {
-        console.log('El correo electrónico no es válido');
-        mensaje.text('El correo electrónico no es válido');
-        $('.msg-correo-sus').css('display', 'block');
-        mensaje.css('backgroundColor', '#ff0000');
-        event.preventDefault(); // Evita el envío del formulario si el correo electrónico no es válido
-        setTimeout(() => {
-            $('.msg-correo-sus').css('display', 'none');
-        }, 3000);
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = emailInput.value.trim();
+        const tipo_suscripcion = form.querySelector('select[name="tipo_suscripcion"]').value;
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        // Validar que el email no esté vacío
+        if (!email) {
+            showMessage('El email es obligatorio.', 'error');
+            return;
+        }
+
+        // Validar el formato del email
+        if (!isValidEmail(email)) {
+            showMessage('El formato del email es incorrecto.', 'error');
+            return;
+        }
+
+        // Enviar la solicitud AJAX para verificar y guardar el email
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify({ email: email, tipo_suscripcion: tipo_suscripcion })
+        })
+        .then(response => response.json())
+        .then(data => {
+            showMessage(data.message, data.status);
+        })
+        .catch(error => {
+            showMessage('Ocurrió un error. Por favor, inténtalo de nuevo.', 'error');
+        });
+    });
+
+    function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
     }
-    mensaje.css('display', 'inline-block');
-}
 
-
-$(document).ready(function () {
-    $('#btn-suscribir').click(validar_email);
-} );
+    function showMessage(message, type) {
+        messageContainer.innerText = message;
+        messageContainer.className = 'msg ' + type;
+        messageContainer.style.display = 'block';
+    }
+});
