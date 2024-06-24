@@ -19,8 +19,9 @@ def index(request):
 
 # eventos ecocashback 
 
-def listar_eventos(request):
-    eventos = Evento.objects.all()
+def mostrar(request):
+    # Ordena los eventos por fecha de manera descendente y toma los últimos 2
+    eventos = Evento.objects.order_by('-fecha')[:2]
     return render(request, 'public/inicio.html', {'eventos': eventos})
 @csrf_exempt
 def agregar_suscripcion(request):
