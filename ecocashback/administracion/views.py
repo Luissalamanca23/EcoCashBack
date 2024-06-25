@@ -11,7 +11,7 @@ def agregar_evento(request):
         form = EventoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_eventos')
+            return redirect('listar_evento')
     else:
         form = EventoForm()
     return render(request, 'administracion/eventos/agregar_evento.html', {'form': form})
@@ -28,7 +28,7 @@ def modificar_evento(request, pk):
         form = EventoForm(request.POST, instance=evento)
         if form.is_valid():
             form.save()
-            return redirect('listar_eventos')
+            return redirect('listar_evento')
     else:
         form = EventoForm(instance=evento)
     return render(request, 'administracion/eventos/modificar_evento.html', {'form': form})

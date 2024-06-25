@@ -1,17 +1,29 @@
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from .models import Newsletter
+from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login as auth_login
+from administracion.models import Newsletter
 from administracion.models import Evento
+from administracion.models import Usuario
+
 from .forms import NewsletterForm
+from .forms import LoginForm
+from .forms import EventoForm
+from django.contrib import messages
 import json
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 
 def index(request):
     eventos = Evento.objects.all()
     return render(request, 'inicio.html', {'eventos': eventos})
 
 
-
+@ensure_csrf_cookie
+def debug_csrf_view(request):
+    if request.method == 'POST':
+        return HttpResponse("CSRF token received.")
+    return HttpResponse("CSRF token set.")
 
 
 
@@ -29,7 +41,74 @@ def agregar_suscripcion(request):
         form = NewsletterForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'public/inicio.html', {'eventos': Evento.objects.all(), 'message': 'Suscripción exitosa'})
+            return render(request, 'inicio.html', {'eventos': Evento.objects.all(), 'message': 'Suscripción exitosa'})
         else:
-            return render(request, 'public/inicio.html', {'eventos': Evento.objects.all(), 'message': 'Por favor, ingresa un email válido.'})
+            return render(request, 'inicio.html', {'eventos': Evento.objects.all(), 'message': 'Por favor, ingresa un email válido.'})
     return redirect('listar_eventos')
+
+def login_view(request):
+    if request.method == 'POST':
+        print("POST request received")
+        form = LoginForm(request.POST)  
+        if form.is_valid():
+            print("Form is valid")
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            print(f"Email: {email}, Password: {password}")
+            print("Authenticating user with email:", email)
+            user = authenticate(request, email=email, password=password)
+            if user is not None:
+                print("Authentication successful")
+                auth_login(request, user)  # Correcto uso de auth_login
+                if user.rol.nombre == 'Administrador':
+                    return redirect('admin_dashboard')
+                else:
+                    return redirect('user_dashboard')
+            else:
+                print("Authentication failed")
+                return render(request, 'login.html', {'form': form, 'error': 'Credenciales inválidas'})
+    else:
+        print("Rendering login page")
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
+
+def verificar_usuario(request):
+    if request.user.is_authenticated:
+        usuario_val = Usuario.objects.get(email=request.user.email)
+        if usuario_val.rol.nombre == 'Administrador':
+            return redirect('admin_dashboard')
+        else:
+            return redirect('user_dashboard')
+    else:
+        return redirect('login_view')
+
+def login(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        email = data['email']
+        password = data['password']
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            login(request, user)
+            return JsonResponse({'message': 'Inicio de sesión exitoso'})
+        else:
+            return JsonResponse({'message': 'Correo o contraseña incorrectos'}, status=400)
+    return JsonResponse({'message': 'Método no permitido'}, status=405)
+
+
+def user_dashboard(request):
+    return render(request, 'user.html')
+
+def admin_dashboard(request):
+    return render(request, 'administrarador/admin.html')
+
+
+def create_user(request):
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('listar_users')
+    else:
+        form = UsuarioForm()
+    return render(request, 'public/users/agregar_user.html', {'form': form})
