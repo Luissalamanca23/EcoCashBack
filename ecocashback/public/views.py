@@ -49,28 +49,20 @@ def agregar_suscripcion(request):
 def login_view(request):
     if request.method == 'POST':
         print("POST request received")
-        form = LoginForm(request.POST)  
-        if form.is_valid():
-            print("Form is valid")
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password']
-            print(f"Email: {email}, Password: {password}")
-            print("Authenticating user with email:", email)
-            user = authenticate(request, email=email, password=password)
-            if user is not None:
-                print("Authentication successful")
-                auth_login(request, user)  # Correcto uso de auth_login
-                if user.rol.nombre == 'Administrador':
-                    return redirect('admin_dashboard')
-                else:
-                    return redirect('user_dashboard')
+        email = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            auth_login(request, user)
+            if user.rol.nombre == 'Administrador':
+                return redirect('admin_dashboard')
             else:
-                print("Authentication failed")
-                return render(request, 'login.html', {'form': form, 'error': 'Credenciales inválidas'})
+                return redirect('user_dashboard')
+        else:
+            return HttpResponse("Invalid login details")
     else:
         print("Rendering login page")
-        form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+        return render(request, 'login.html')
 
 def verificar_usuario(request):
     if request.user.is_authenticated:
@@ -82,18 +74,6 @@ def verificar_usuario(request):
     else:
         return redirect('login_view')
 
-def login(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        email = data['email']
-        password = data['password']
-        user = authenticate(request, email=email, password=password)
-        if user is not None:
-            login(request, user)
-            return JsonResponse({'message': 'Inicio de sesión exitoso'})
-        else:
-            return JsonResponse({'message': 'Correo o contraseña incorrectos'}, status=400)
-    return JsonResponse({'message': 'Método no permitido'}, status=405)
 
 
 def user_dashboard(request):

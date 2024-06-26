@@ -17,3 +17,7 @@ Technologies used in the project:
 *   Bootstrap
 *   Vercel
 *   DJango
+
+<h2>🚧 Install Requirements</h2>
+
+pip install -r requirements.txt

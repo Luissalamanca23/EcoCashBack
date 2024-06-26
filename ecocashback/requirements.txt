@@ -1,0 +1,10 @@
+// refresca los requerimentos
+// pip freeze > requirements.txt
+
+// instala los requerimentos
+// pip install -r requirements.txt
+
+
+Django==5.0.6
+psycopg2-binary==2.9.6
+python-decouple==3.8
