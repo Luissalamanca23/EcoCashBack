@@ -1,4 +1,4 @@
-function validar_campos_contacto(event) {
+function validarCamposContacto(event) {
     event.preventDefault();
     var nombre = $('#nombre').val();
     var email = $('#email').val();
@@ -19,7 +19,6 @@ function validar_campos_contacto(event) {
         mensaje_campo.css('borderRadius', '15px');
         mensaje_campo.css('margin-top', '10px');
         mensaje_campo.css('margin-bottom', '10px');
-        console.log('nombre y correo vasios');
         setTimeout(() => {
             mensaje_campo.css('display', 'none');
         }, 3000);
@@ -33,7 +32,6 @@ function validar_campos_contacto(event) {
         mensaje_nombre.css('borderRadius', '15px');
         mensaje_nombre.css('margin-top', '10px');
         mensaje_nombre.css('margin-bottom', '10px');
-        console.log('El campo nombre no puede estar vacío');
         setTimeout(() => {
             mensaje_nombre.css('display', 'none');
         }, 3000);
@@ -47,7 +45,6 @@ function validar_campos_contacto(event) {
         mensaje_correo.css('borderRadius', '15px');
         mensaje_correo.css('margin-top', '10px');
         mensaje_correo.css('margin-bottom', '10px');
-        console.log('El campo correo no puede estar vacío');
         setTimeout(() => {
             mensaje_correo.css('display', 'none');
         }, 3000);
@@ -61,7 +58,6 @@ function validar_campos_contacto(event) {
         mensaje_correo.css('borderRadius', '15px');
         mensaje_correo.css('margin-top', '10px');
         mensaje_correo.css('margin-bottom', '10px');
-        console.log('El formato de correo no es válido');
         setTimeout(() => {
             mensaje_correo.css('display', 'none');
         }, 3000);
@@ -75,7 +71,6 @@ function validar_campos_contacto(event) {
         mensaje_mensaje.css('borderRadius', '15px');
         mensaje_mensaje.css('margin-top', '10px');
         mensaje_mensaje.css('margin-bottom', '10px');
-        console.log('El campo mensaje no puede estar vacío');
         setTimeout(() => {
             mensaje_mensaje.css('display', 'none');
         }, 3000);
@@ -93,6 +88,9 @@ function validar_campos_contacto(event) {
         setTimeout(() => {
             mensaje_mensaje.css('display', 'none');
         }, 3000);
-
     }
 }
+
+$(document).ready(function () {
+    $('#btn-enviar').click(validarCamposContacto);
+});
