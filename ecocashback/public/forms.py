@@ -15,5 +15,5 @@ class EventoForm(forms.ModelForm):
         fields = ['nombre', 'descripcion', 'fecha', 'ubicacion', 'comuna']
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(label='Correo Electrónico', max_length=100)
-    password = forms.CharField(widget=forms.PasswordInput(), label='Contraseña')
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    contraseña = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))

@@ -82,11 +82,14 @@ def modificar_users(request, pk):
         form = UsuarioForm(instance=usuario)
     return render(request, 'administracion/users/modificar_user.html', {'form': form})
 
+
 def agregar_usuario(request):
     if request.method == 'POST':
         form = UsuarioForm(request.POST)
         if form.is_valid():
-            form.save()
+            usuario = form.save(commit=False)
+            usuario.set_password(form.cleaned_data['contraseña'])
+            usuario.save()
             return redirect('listar_users')
     else:
         form = UsuarioForm()
