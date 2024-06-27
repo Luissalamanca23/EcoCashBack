@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,10 +19,9 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/estilo-principal.css' %}">
     <meta name="google-site-verification" content="Gd9MCIovA2JFHNA4CInROaqd-kYPQgFl9_KlDNKJyeg" />
-    <script src="{% static 'js/validaciones/val_cotiza.js' %}"></script>
-    <script src="{% static 'js/validaciones/val_suscrip.js' %}"></script>
-
     <script src="{% static 'js/mapa.js' %}"></script>
+    <script src="{% static 'js/validaciones/val_cotiza.js' %}"></script>
+    <script src="{% static 'js/validaciones/val_contact.js' %}"></script>
     <script src="{% static 'js/validaciones/val_fecha_evento.js' %}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -60,10 +58,10 @@
                     <a href="">Sobre Nosotros</a>
                 </div>
                 <div class="col">
-                    <a href="">Contactanos</a>
+                    <a href="{% url 'contacto' %}">Contactanos</a>
                 </div>
                 <div class="col">
-                    <a href="{% url 'login_view' %}">
+                    <a href="{% url 'login' %}">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user icon-user-nav"
                             width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -96,11 +94,11 @@
                             <a class="nav-link" href="">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Contactanos</a>
+                            <a class="nav-link" href="{% url 'contacto' %}">Contactanos</a>
                         </li>
                         <li class="nav-item">
                             <div class="col">
-                                <a href="">
+                                <a href="{% url 'login' %}">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-user icon-user-nav" width="44" height="44"
                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
@@ -231,7 +229,7 @@
                                                 <option value="Novedades">Novedades</option>
                                                 <option value="Ambos">Ambos</option>
                                             </select>
-                                            <input type="submit" value="Suscribirse" class="button-suscripcion" id="boton-suscripcion">
+                                            <input type="submit" value="Suscribirse" class="button-suscripcion" id="boton-suscripcion" >
                                         </form>
                                         <div class="msg-correo-sus">
                                             <p id="mensaje" class="msg"></p>
@@ -248,13 +246,15 @@
                             nosotros para poder saber cuanto podrias ganar reciclando con
                             nosotros.
                         </p>
-                        <form action="https://formsubmit.co/6aced0543484ad6006fc2dc5b2f7a947" method="POST">
+                        <form action="" method="POST">
 
                             <div class="form-group">
                                 <input class="relleno-form" type="text" name="nombre_cotiza" id="nombre-cotiza"
                                     placeholder="Nombre" />
+                                    <div id="val_nom_contac"></div>
                                 <input class="relleno-form" type="email" name="email_cotiza" id="email-cotiza"
                                     placeholder="Email" />
+                                    <div id="val_email_contac"></div>
                             </div>
                             <div class="form-group">
                                 <input class="relleno-form" type="text" name="telefono_cotiza" id="telefono-cotiza"
@@ -266,6 +266,7 @@
 
                             <textarea class="form-control" id="mensaje" name="mensaje_cotiza"
                                 placeholder="Mensaje"></textarea>
+                                <div id="val_mensaje_contac"></div>
 
 
                             <button type="submit" class="button-suscripcion" onclick="validar_formulario(event)"
@@ -353,46 +354,51 @@
         <p class="derechos">&copy; 2024 EcoCashBack - Todos los derechos reservados.</p>
     </footer>
     <script>
-        // Obtén todas las fechas de los eventos
-        var fechasEvento = document.querySelectorAll('.fecha-evento');
-
-        // Itera sobre cada fecha de evento
-        fechasEvento.forEach(function (fechaEventoElemento) {
-            // Extrae la fecha del texto del elemento
-            var fechaEvento = fechaEventoElemento.innerText.split(': ')[1];
-
-            // Convierte la fecha del evento a un objeto Date
-            var fechaEventoDate = new Date(fechaEvento.split('/')[2], fechaEvento.split('/')[1] - 1, fechaEvento.split('/')[0]);
-
-            // Obtén la fecha actual
-            var fechaActual = new Date();
-
-            // Compara las fechas
-            if (fechaEventoDate < fechaActual) {
-                // Si la fecha del evento ya ha pasado, oscurece el div de eventos y muestra un mensaje
-                var elemento = fechaEventoElemento.closest('.evento_con_fech');
-                elemento.style.backgroundColor = 'var(--verde)'; // Cambia esto al color que quieras
-                elemento.style.color = '#fff'; // Cambia esto al color que quieras
-                elemento.style.position = 'relative'; // Asegúrate de que el div del evento tiene una posición relativa
-
-                var fechaLugar = elemento.querySelector('.fecha-lugar');
-
-                // Crea un nuevo elemento para el mensaje
-                var mensaje = document.createElement('p');
-                mensaje.innerText = 'Evento ya realizado!';
-                mensaje.style.position = 'absolute';
-                mensaje.style.top = '0';
-                mensaje.style.left = '0';
-                mensaje.style.color = '#fff'; // Cambia esto al color que quieras
-                mensaje.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Cambia esto al color que quieras
-                mensaje.style.padding = '10px';
-                mensaje.style.borderRadius = '7px';
-                fechaLugar.style.marginTop = '40px'; // Ajusta el margen superior para que el mensaje no se superponga
-
-                // Agrega el mensaje al div del evento
-                elemento.appendChild(mensaje);
-            }
-        });
+        // Función para validar si una fecha es pasada y actualizar el estilo del evento
+        function validarFechasEventos() {
+            // Obtén todas las fechas de los eventos
+            var fechasEvento = document.querySelectorAll('.fecha-evento');
+    
+            // Itera sobre cada fecha de evento
+            fechasEvento.forEach(function (fechaEventoElemento) {
+                // Extrae la fecha del texto del elemento
+                var fechaEvento = fechaEventoElemento.innerText.split(': ')[1];
+    
+                // Convierte la fecha del evento a un objeto Date
+                var fechaEventoDate = new Date(fechaEvento.split('/')[2], fechaEvento.split('/')[1] - 1, fechaEvento.split('/')[0]);
+    
+                // Obtén la fecha actual
+                var fechaActual = new Date();
+    
+                // Compara las fechas
+                if (fechaEventoDate < fechaActual) {
+                    // Si la fecha del evento ya ha pasado, oscurece el div de eventos y muestra un mensaje
+                    var elemento = fechaEventoElemento.closest('.evento_con_fech');
+                    elemento.style.backgroundColor = 'var(--verde)'; // Cambia esto al color que quieras
+                    elemento.style.color = '#fff'; // Cambia esto al color que quieras
+                    elemento.style.position = 'relative'; // Asegúrate de que el div del evento tiene una posición relativa
+    
+                    var fechaLugar = elemento.querySelector('.fecha-lugar');
+    
+                    // Crea un nuevo elemento para el mensaje
+                    var mensaje = document.createElement('p');
+                    mensaje.innerText = 'Evento ya realizado!';
+                    mensaje.style.position = 'absolute';
+                    mensaje.style.top = '0';
+                    mensaje.style.left = '0';
+                    mensaje.style.color = '#fff'; // Cambia esto al color que quieras
+                    mensaje.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Cambia esto al color que quieras
+                    mensaje.style.padding = '10px';
+                    mensaje.style.borderRadius = '7px';
+                    fechaLugar.style.marginTop = '40px'; // Ajusta el margen superior para que el mensaje no se superponga
+    
+                    // Agrega el mensaje al div del evento
+                    elemento.appendChild(mensaje);
+                }
+            });
+        }
+    
+        document.addEventListener('DOMContentLoaded', validarFechasEventos);
     </script>
     <script>
         var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleControls'), {
