@@ -1,15 +1,17 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
+from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 from administracion.models import Newsletter
 from administracion.models import Evento
 from administracion.models import Usuario
+from administracion.models import Rol
 
 from .forms import NewsletterForm
 from .forms import LoginForm
 from .forms import EventoForm
-from django.contrib import messages
 import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -48,31 +50,42 @@ def agregar_suscripcion(request):
 
 def login_view(request):
     if request.method == 'POST':
-        print("POST request received")
-        email = request.POST['email']
-        password = request.POST['password']
-        user = authenticate(request, email=email, password=password)
-        if user is not None:
-            auth_login(request, user)
-            if user.rol.nombre == 'Administrador':
-                return redirect('admin_dashboard')
-            else:
-                return redirect('user_dashboard')
-        else:
-            return HttpResponse("Invalid login details")
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            contraseña = form.cleaned_data['contraseña']
+            try:
+                usuario = Usuario.objects.get(email=email, contraseña=contraseña)
+                # Iniciar sesión manualmente sin usar authenticate y login
+                request.session['usuario_id'] = usuario.id
+                return redirect('home')
+            except Usuario.DoesNotExist:    
+                form.add_error(None, 'Email o contraseña incorrectos')
     else:
-        print("Rendering login page")
-        return render(request, 'login.html')
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
+
+def home_view(request):
+    if 'usuario_id' in request.session:
+        usuario = Usuario.objects.get(id=request.session['usuario_id'])
+        return render(request, 'home.html', {'usuario': usuario})
+    else:
+        return redirect('login')
 
 def verificar_usuario(request):
-    if request.user.is_authenticated:
-        usuario_val = Usuario.objects.get(email=request.user.email)
+    try:
+        if request.user.is_authenticated:
+            usuario_val = Usuario.objects.get(email=request.user.email)
         if usuario_val.rol.nombre == 'Administrador':
             return redirect('admin_dashboard')
         else:
             return redirect('user_dashboard')
-    else:
-        return redirect('login_view')
+    except Usuario.DoesNotExist:
+        # Maneja el error cuando el usuario no existe
+        usuario_val = None
+        return redirect('login')
+        print("Usuario no encontrado")
+    
 
 
 
@@ -92,3 +105,9 @@ def create_user(request):
     else:
         form = UsuarioForm()
     return render(request, 'public/users/agregar_user.html', {'form': form})
+
+def contacto(request):
+    return render(request, 'contactanos.html')
+
+def servicios(request):
+    return render(request, 'servicios.html')
