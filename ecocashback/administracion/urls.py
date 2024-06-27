@@ -11,7 +11,7 @@ urlpatterns = [
     path('eliminar_newsletter/<int:pk>/', views.eliminar_newsletter, name='eliminar_newsletter'),
     path('modificar_newsletter/<int:pk>/', views.modificar_newsletter, name='modificar_newsletter'),
     path('listar_users/', views.listar_users, name='listar_users'),
-    path('agregar_user/', views.agregar_usuario, name='agregar_usuario'),
+    path('agregar_user/', views.agregar_usuario, name='agregar_usuario'),   
     path('modificar_user/<int:pk>/', views.modificar_users, name='modificar_users'),
     path('eliminar_user/<int:pk>/', views.eliminar_users, name='eliminar_users'),
 ]

@@ -17,11 +17,10 @@ class EventoForm(forms.ModelForm):
 class UsuarioForm(forms.ModelForm):
     class Meta:
         model = Usuario
-        fields = ['nombre', 'email', 'contraseña', 'rol']
-        widgets = {
-            'contraseña': forms.PasswordInput(),  # Para que el campo de contraseña se renderice como un campo de contraseña
-        }
+        fields = ['email', 'nombre', 'rol'] 
+
+from django import forms
 
 class LoginForm(forms.Form):
     email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    contraseña = forms.CharField(widget=forms.PasswordInput)
