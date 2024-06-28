@@ -49,27 +49,16 @@
                     <img class="logo-ecocashback" src="{% static 'img/logo-ecocashback.jpeg' %}" alt="Logo-EcoCashBack">
                 </div>
                 <div class="col">
-                    <a href="#">Inicio</a>
+                    <a href="{% url 'index' %}">Inicio</a>
                 </div>
                 <div class="col">
-                    <a href="">Servicios</a>
+                    <a href="{% url 'servicios' %}">Servicios</a>
                 </div>
                 <div class="col">
-                    <a href="">Sobre Nosotros</a>
+                    <a href="{% url 'nosotros' %}">Sobre Nosotros</a>
                 </div>
                 <div class="col">
                     <a href="{% url 'contacto' %}">Contactanos</a>
-                </div>
-                <div class="col">
-                    <a href="">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user icon-user-nav"
-                            width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                        </svg>
-                    </a>
                 </div>
             </div>
         </nav>
@@ -85,30 +74,18 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Servicios</a>
+                            <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Sobre Nosotros</a>
+                            <a class="nav-link" href="{% url 'nosotros' %}">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'contacto' %}">Contactanos</a>
                         </li>
                         <li class="nav-item">
-                            <div class="col">
-                                <a href="">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-user icon-user-nav" width="44" height="44"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                    </svg>
-                                </a>
-                            </div>
                         </li>
                     </ul>
                 </div>

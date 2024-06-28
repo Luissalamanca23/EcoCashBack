@@ -11,17 +11,17 @@
         content="EcoCashBack, reciclaje, sostenibilidad, Puerto Montt, Puerto Varas, reciclaje, reciclaje de basura, reciclaje de plástico, reciclaje de papel, reciclaje de vidrio, reciclaje de cartón, reciclaje de metal, reciclaje de aluminio, reciclaje de electrónicos, reciclaje de baterías, reciclaje de pilas, reciclaje de aceite, reciclaje de ropa, reciclaje de zapatos, reciclaje de juguetes, reciclaje de muebles, reciclaje de electrodomésticos, reciclaje de madera, reciclaje de neumáticos, reciclaje de envases, reciclaje de latas, reciclaje de botellas, reciclaje de plástico PET, reciclaje de plástico HDPE, reciclaje de plástico LDPE, reciclaje de plástico PVC, reciclaje de plástico PP, reciclaje de plástico PS, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE">
     <meta name=" viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ecocashback.com">
-    <meta property="og:image" content="fotos/logo-ecocashback.jpeg">
+    <meta property="og:url" content="https://ecocashback.cl">
+    <meta property="og:image" content="{% static 'img/logo-ecocashback.jpeg' %}">
     <meta property="og:title" content="EcoCashBack">
     <title>EcoCashBack-Servicios</title>
     <meta name="description"
         content="EcoCashBack es una organización comprometida con la promoción del reciclaje y la sostenibilidad en nuestra comunidad.">
-    <link rel="icon" href="../fotos/logo-ecocashback.jpeg">
-    <link rel="preload" href="../css/normalize.css" as="style">
-    <link rel="preload" href="../css/estilo-principal.css" as="style">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/estilo-principal.css">
+    <link rel="stylesheet" href="{% static 'img/logo-ecocashback.jpeg' %}">
+    <link rel="preload" href="{% static 'css/normalize.css'%}" as="style">
+    <link rel="preload" href="{% static 'css/estilo-principal.css'%}" as="style">
+    <link rel="stylesheet" href="{% static 'css/normalize.css'%}">
+    <link rel="stylesheet" href="{% static 'css/estilo-principal.css'%}">
     <meta name="google-site-verification" content="Gd9MCIovA2JFHNA4CInROaqd-kYPQgFl9_KlDNKJyeg" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -35,37 +35,26 @@
         <nav class="container text-center nav_regular">
             <div class="row">
                 <div class="col">
-                    <img class="logo-ecocashback" src="../fotos/logo-ecocashback.jpeg" alt="Logo-EcoCashBack">
+                    <img class="logo-ecocashback" src="{% static 'img/logo-ecocashback.jpeg' %}" alt="Logo-EcoCashBack">
                 </div>
                 <div class="col">
-                    <a href="../index.html">Inicio</a>
+                    <a href="{% url 'index' %}">Inicio</a>
                 </div>
                 <div class="col">
-                    <a href="servicios.html">Servicios</a>
+                    <a href="{% url 'servicios' %}">Servicios</a>
                 </div>
                 <div class="col">
-                    <a href="sobre-nosotros.html">Sobre Nosotros</a>
+                    <a href="{% url 'nosotros' %}">Sobre Nosotros</a>
                 </div>
                 <div class="col">
-                    <a href="contactanos.html">Contactanos</a>
-                </div>
-                <div class="col">
-                    <a href="login.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user icon-user-nav"
-                            width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                        </svg>
-                    </a>
+                    <a href="{% url 'contacto' %}">Contactanos</a>
                 </div>
             </div>
         </nav>
         <nav class="navbar navbar-expand-lg bg-body-tertiary nav_celular">
             <div class="container-fluid cel-header">
                 <div class="col">
-                    <img class="logo-ecocashback" src="../fotos/logo-ecocashback.jpeg" alt="Logo-EcoCashBack">
+                    <img class="logo-ecocashback" src="{% static 'img/logo-ecocashback.jpeg' %}" alt="Logo-EcoCashBack">
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,30 +63,18 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="servicios.html">Servicios</a>
+                            <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a>
+                            <a class="nav-link" href="{% url 'nosotros' %}">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contactanos.html">Contactanos</a>
+                            <a class="nav-link" href="{% url 'contacto' %}">Contactanos</a>
                         </li>
                         <li class="nav-item">
-                            <div class="col">
-                                <a href="login.html">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-user icon-user-nav" width="44" height="44"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                    </svg>
-                                </a>
-                            </div>
                         </li>
                     </ul>
                 </div>
