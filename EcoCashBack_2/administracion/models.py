@@ -1,7 +1,9 @@
 from django.db import models
 
 class Rol(models.Model):
+    rol_id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
 
     def __str__(self):
         return self.nombre
@@ -9,9 +11,9 @@ class Rol(models.Model):
 class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    contraseña = models.CharField(max_length=100) 
+    contraseña = models.CharField(max_length=100)
     fecha_registro = models.DateTimeField(auto_now_add=True)
-    rol = models.ForeignKey(Rol, on_delete=models.CASCADE)
+    rol = models.ForeignKey(Rol, on_delete=models.CASCADE, default=1)  # Establece un valor predeterminado para el campo 'rol'
 
     def __str__(self):
         return self.nombre
