@@ -24,6 +24,12 @@ def index(request):
     return render(request, 'inicio.html', {'eventos': eventos})
 
 
+def nosotros(request):
+    return render(request, 'sobre-nosotros.html')
+
+def inicio(request0):
+    return render(request0, 'inicio.html')
+
 
 
 

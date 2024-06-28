@@ -11,17 +11,17 @@
     content="EcoCashBack, reciclaje, sostenibilidad, Puerto Montt, Puerto Varas, reciclaje, reciclaje de basura, reciclaje de plástico, reciclaje de papel, reciclaje de vidrio, reciclaje de cartón, reciclaje de metal, reciclaje de aluminio, reciclaje de electrónicos, reciclaje de baterías, reciclaje de pilas, reciclaje de aceite, reciclaje de ropa, reciclaje de zapatos, reciclaje de juguetes, reciclaje de muebles, reciclaje de electrodomésticos, reciclaje de madera, reciclaje de neumáticos, reciclaje de envases, reciclaje de latas, reciclaje de botellas, reciclaje de plástico PET, reciclaje de plástico HDPE, reciclaje de plástico LDPE, reciclaje de plástico PVC, reciclaje de plástico PP, reciclaje de plástico PS, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE, reciclaje de plástico PS, reciclaje de plástico PP, reciclaje de plástico PVC, reciclaje de plástico O, reciclaje de plástico Otros, reciclaje de plástico ABS, reciclaje de plástico PC, reciclaje de plástico PLA, reciclaje de plástico PMMA, reciclaje de plástico POM, reciclaje de plástico PA, reciclaje de plástico PE">
   <meta name=" viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ecocashback.com">
-  <meta property="og:image" content="fotos/logo-ecocashback.jpeg">
+  <meta property="og:url" content="https://ecocashback.cl">
+  <meta property="og:image" content="{% static 'img/logo-ecocashback.jpeg' %}">
   <meta property="og:title" content="EcoCashBack">
   <title>EcoCashBack-Servicios</title>
   <meta name="description"
     content="EcoCashBack es una organización comprometida con la promoción del reciclaje y la sostenibilidad en nuestra comunidad.">
-  <link rel="icon" href="../fotos/logo-ecocashback.jpeg">
-  <link rel="preload" href="../css/normalize.css" as="style">
-  <link rel="preload" href="../css/estilo-principal.css" as="style">
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/estilo-principal.css">
+    <link rel="stylesheet" href="{% static 'img/logo-ecocashback.jpeg' %}">
+  <link rel="stylesheet" href="{% static 'img/logo-ecocashback.jpeg' %}">
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/estilo-principal.css' %}">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
@@ -37,74 +37,52 @@
   <header>
     <nav class="container text-center nav_regular">
       <div class="row">
-        <div class="col">
-          <img class="logo-ecocashback" src="../fotos/logo-ecocashback.jpeg" alt="Logo-EcoCashBack">
-        </div>
-        <div class="col">
-          <a href="../index.html">Inicio</a>
-        </div>
-        <div class="col">
-          <a href="#">Servicios</a>
-        </div>
-        <div class="col">
-          <a href="sobre-nosotros.html">Sobre Nosotros</a>
-        </div>
-        <div class="col">
-          <a href="contactanos.html">Contactanos</a>
-        </div>
-        <div class="col">
-          <a href="login.html">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user icon-user-nav" width="44"
-              height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-              <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-            </svg>
-          </a>
-        </div>
+          <div class="col">
+              <img class="logo-ecocashback" src="{% static 'img/logo-ecocashback.jpeg' %}" alt="Logo-EcoCashBack">
+          </div>
+          <div class="col">
+              <a href="{% url 'index' %}">Inicio</a>
+          </div>
+          <div class="col">
+              <a href="{% url 'servicios' %}">Servicios</a>
+          </div>
+          <div class="col">
+              <a href="{% url 'nosotros' %}">Sobre Nosotros</a>
+          </div>
+          <div class="col">
+              <a href="{% url 'contacto' %}">Contactanos</a>
+          </div>
       </div>
-    </nav>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary nav_celular">
+  </nav>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary nav_celular">
       <div class="container-fluid cel-header">
-        <div class="col">
-          <img class="logo-ecocashback" src="../fotos/logo-ecocashback.jpeg" alt="Logo-EcoCashBack">
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactanos.html">Contactanos</a>
-            </li>
-            <li class="nav-item">
-              <div class="col">
-                <a href="login.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user icon-user-nav"
-                    width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                  </svg>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
+          <div class="col">
+              <img class="logo-ecocashback" src="{% static 'img/logo-ecocashback.jpeg' %}" alt="Logo-EcoCashBack">
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'servicios' %}">Servicios</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'nosotros' %}">Sobre Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'contacto' %}">Contactanos</a>
+                  </li>
+                  <li class="nav-item">
+                  </li>
+              </ul>
+          </div>
       </div>
-    </nav>
+  </nav>
   </header>
 
   <body>
@@ -113,7 +91,7 @@
       <div class="card-slider">
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card card-shadow m-3">
-            <img src="../fotos/Recolección de Desechos Reciclables.jpg" class="card-img-top" alt="...">
+            <img src="{% static 'img/Recolección de Desechos Reciclables.jpg' %}" class="card-img-top" alt="...">
             <div class="card-body">
               <h2 class="card-title">Recolección de Desechos Reciclables</h2>
               <p class="card-text">Ofrecemos un servicio de recolección eficiente y confiable de desechos reciclables
@@ -125,7 +103,7 @@
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card card-shadow m-3">
-            <img src="../fotos/Compra de Desechos Reciclables.png" class="card-img-top" alt="...">
+            <img src="{% static 'img/Compra de Desechos Reciclables.png' %}" class="card-img-top" alt="...">
             <div class="card-body">
               <h2 class="card-title">Compra de Desechos Reciclables</h2>
               <p class="card-text">¡Reciclar nunca ha sido tan gratificante! Compramos tus desechos reciclables a
@@ -137,7 +115,7 @@
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card card-shadow m-3">
-            <img src="../fotos/Asesoramiento.jpeg" class="card-img-top" alt="...">
+            <img src="{% static 'img/Asesoramiento.jpeg' %}" class="card-img-top" alt="...">
             <div class="card-body">
               <h2 class="card-title">Asesoramiento en Clasificación</h2>
               <h6>¿No estás seguro de cómo clasificar tus desechos correctamente?</h6>
@@ -150,7 +128,7 @@
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card card-shadow m-3">
-            <img src="../fotos/Programas de Incentivos.jpg" class="card-img-top" alt="...">
+            <img src="{% static 'img/Programas de Incentivos.jpg' %}" class="card-img-top" alt="...">
             <div class="card-body">
               <h2 class="card-title">Programas de Incentivos</h2>
               <p class="card-text">Participa en nuestros programas de incentivos y obtén recompensas por tu compromiso
@@ -163,7 +141,7 @@
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card card-shadow m-3">
-            <img src="../fotos/Colaboración con Empresas.jpg" class="card-img-top" alt="...">
+            <img src="{% static 'img/Colaboración con Empresas.jpg' %}" class="card-img-top" alt="...">
             <div class="card-body">
               <h2 class="card-title">Colaboración con Empresas</h2>
               <p class="card-text">Trabajamos en colaboración con empresas locales y grandes corporaciones para
