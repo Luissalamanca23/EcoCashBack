@@ -4,10 +4,13 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
 from administracion.models import Newsletter
 from administracion.models import Evento
 from administracion.models import Usuario
 from administracion.models import Rol
+from administracion.models import Newsletter, Evento
+from administracion.forms import NewsletterForm
 
 from .forms import NewsletterForm
 from .forms import LoginForm
@@ -32,6 +35,7 @@ def mostrar(request):
     # Ordena los eventos por fecha de manera descendente y toma los últimos 2
     eventos = Evento.objects.order_by('-fecha')[:2]
     return render(request, 'public/inicio.html', {'eventos': eventos})
+
 @csrf_exempt
 def agregar_suscripcion(request):
     if request.method == 'POST':
@@ -41,7 +45,7 @@ def agregar_suscripcion(request):
             return render(request, 'inicio.html', {'eventos': Evento.objects.all(), 'message': 'Suscripción exitosa'})
         else:
             return render(request, 'inicio.html', {'eventos': Evento.objects.all(), 'message': 'Por favor, ingresa un email válido.'})
-    return redirect('listar_eventos')
+    return redirect('listar_evento')
 
 
 def verificar_usuario(request):

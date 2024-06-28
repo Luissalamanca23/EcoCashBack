@@ -27,7 +27,6 @@
                         <ul class="dropdown-menu" aria-labelledby="eventosDropdown">
                             <li><a class="dropdown-item" href="{% url 'listar_evento' %}">Listar</a></li>
                             <li><a class="dropdown-item" href="{% url 'agregar_evento' %}">Agregar</a></li>
-
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -81,19 +80,19 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nombre</th>
                     <th>Email</th>
+                    <th>Tipo de Suscripción</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 {% for newsletter in newsletters %}
                 <tr>
-                    <td>{{ newsletter.usuario.nombre }}</td>
                     <td>{{ newsletter.email }}</td>
+                    <td>{{ newsletter.tipo_suscripcion }}</td>
                     <td>
-                        <a href="{% url 'modificar_newsletter' evento.pk %}" class="btn-modificar">Modificar</a>
-                        <a href="{% url 'eliminar_newsletter' evento.pk %}" class="btn btn-danger">Eliminar</a>
+                        <a href="{% url 'modificar_newsletter' newsletter.pk %}" class="btn-modificar">Modificar</a>
+                        <a href="{% url 'eliminar_newsletter' newsletter.pk %}" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
                 {% endfor %}

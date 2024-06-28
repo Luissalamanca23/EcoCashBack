@@ -4,6 +4,7 @@ from .views import (
     region_list, region_create, region_update, region_delete,
     comuna_list, comuna_create, comuna_update, comuna_delete
 )
+from public.views import index, agregar_suscripcion, contacto, servicios
 
 urlpatterns = [
     path('agregar_evento/', views.agregar_evento, name='agregar_evento'),
@@ -29,4 +30,6 @@ urlpatterns = [
     path('comunas/nueva/', comuna_create, name='comuna_create'),
     path('comunas/<int:pk>/editar/', comuna_update, name='comuna_update'),
     path('comunas/<int:pk>/eliminar/', comuna_delete, name='comuna_delete'),
+
+    path('agregar_suscripcion/', agregar_suscripcion, name='agregar_suscripcion'),
 ]
