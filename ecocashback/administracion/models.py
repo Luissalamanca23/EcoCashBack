@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 class Rol(models.Model):
     rol_id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=50)
@@ -8,14 +10,14 @@ class Rol(models.Model):
         return self.nombre
 
 class Usuario(models.Model):
+    nombre = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    nombre = models.CharField(max_length=50)
-    contraseña = models.CharField(max_length=100) 
+    contraseña = models.CharField(max_length=100)  # Asegúrate de que esta línea esté presente
     fecha_registro = models.DateTimeField(auto_now_add=True)
-    rol = models.CharField(max_length=50)
+    rol = models.ForeignKey(Rol, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.email
+        return self.nombre
 
 class Facturacion(models.Model):
     factura_id = models.AutoField(primary_key=True)

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Próximos Eventos - EcoCashBack</title>
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilo-principal.css' %}">
+</head>
+
+<body>
+    {% include 'public/admin_header.html' %}
+    <main>
+        <div class="col" id="eventos-ecocashback">
+            <h2>Próximos Eventos</h2>
+            <div class="fechas-eventos">
+                <h3>Eventos</h3>
+                {% for evento in eventos %}
+                <div class="evento_con_fech" class="evento">
+                    <div class="fecha-lugar">
+                        <p class="fecha-evento">Fecha: {{ evento.fecha|date:"d/m/Y" }}</p>
+                        <p>Lugar: {{ evento.lugar }}</p>
+                    </div>
+                    <div class="descripcion">
+                        <p>{{ evento.descripcion }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="container-suscripcion-eventos">
+                <div class="row">
+                    <section id="suscribirse">
+                        <div class="container text-center">
+                            <h2>Suscríbete a nuestro Newsletter</h2>
+                            <p>Recibe las últimas noticias y actualizaciones sobre nuestros eventos y servicios.</p>
+                            <form id="form-suscripcion" method="POST" action="{% url 'agregar_suscripcion' %}">
+                                {% csrf_token %}
+                                <input type="email" name="email" id="email-suscripcion" placeholder="Tu Email" />
+                                <select name="tipo_suscripcion">
+                                    <option value="Eventos">Eventos</option>
+                                    <option value="Novedades">Novedades</option>
+                                    <option value="Ambos">Ambos</option>
+                                </select>
+                                <input type="submit" value="Suscribirse" class="button-suscripcion" id="boton-suscripcion">
+                            </form>
+                            <div class="msg-correo-sus">
+                                <p id="mensaje" class="msg"></p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
