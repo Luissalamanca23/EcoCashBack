@@ -7,6 +7,8 @@ from .models import Rol
 from .models import Region, Comuna
 from .forms import RegionForm, ComunaForm
 from .forms import EventoForm, UsuarioForm
+from .forms import NewsletterForm
+from django.views.decorators.csrf import csrf_exempt
 
 def agregar_evento(request):
     if request.method == 'POST':
@@ -22,6 +24,17 @@ def listar_evento(request):
     eventos = Evento.objects.all()
     return render(request, 'administracion/eventos/listar_eventos.html', {'eventos': eventos})
 
+
+@csrf_exempt
+def agregar_suscripcion(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'inicio.html', {'eventos': Evento.objects.all(), 'message': 'Suscripción exitosa'})
+        else:
+            return render(request, 'inicio.html', {'eventos': Evento.objects.all(), 'message': 'Por favor, ingresa un email válido.'})
+    return redirect('listar_evento')
 
 
 def modificar_evento(request, pk):
@@ -48,8 +61,8 @@ def admin_dashboard(request):
 
 
 def listar_newsletter(request):
-    newsletter = Newsletter.objects.all()
-    return render(request, 'administracion/newsletter/listar_news.html', {'newsletter': newsletter})
+    newsletters = Newsletter.objects.all()
+    return render(request, 'administracion/newsletter/listar_news.html', {'newsletters': newsletters})
 
 def eliminar_newsletter(request, pk):
     newsletter = get_object_or_404(Newsletter, pk=pk)

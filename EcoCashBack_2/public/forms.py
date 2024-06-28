@@ -1,13 +1,12 @@
 from django import forms
-from .models import Newsletter
 from .models import Evento
-
+from .models import Newsletter
 
 
 class NewsletterForm(forms.ModelForm):
     class Meta:
         model = Newsletter
-        fields = ['email', 'tipo_suscripcion']
+        fields = ['email', 'usuario', 'tipo_suscripcion']
 
 class EventoForm(forms.ModelForm):
     class Meta:
