@@ -4,6 +4,8 @@ from .forms import EventoForm
 from .models import Newsletter
 from .models import Usuario 
 from .models import Rol
+from .models import Region, Comuna
+from .forms import RegionForm, ComunaForm
 from .forms import EventoForm, UsuarioForm
 
 def agregar_evento(request):
@@ -101,3 +103,72 @@ def eliminar_users(request, pk):
         usuario.delete()
         return redirect('listar_users')
     return render(request, 'administracion/users/eliminar_user.html', {'usuario': usuario})
+
+
+
+
+# Vistas para Region
+def region_list(request):
+    regiones = Region.objects.all()
+    return render(request, 'administracion/ubicacion/region_list.html', {'regiones': regiones})
+
+def region_create(request):
+    if request.method == "POST":
+        form = RegionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('region_list')
+    else:
+        form = RegionForm()
+    return render(request, 'administracion/ubicacion/region_form.html', {'form': form})
+
+def region_update(request, pk):
+    region = get_object_or_404(Region, pk=pk)
+    if request.method == "POST":
+        form = RegionForm(request.POST, instance=region)
+        if form.is_valid():
+            form.save()
+            return redirect('region_list')
+    else:
+        form = RegionForm(instance=region)
+    return render(request, 'administracion/ubicacion/region_form.html', {'form': form})
+
+def region_delete(request, pk):
+    region = get_object_or_404(Region, pk=pk)
+    if request.method == "POST":
+        region.delete()
+        return redirect('region_list')
+    return render(request, 'administracion/ubicacion/region_confirm_delete.html', {'object': region})
+
+# Vistas para Comuna
+def comuna_list(request):
+    comunas = Comuna.objects.all()
+    return render(request, 'administracion/ubicacion/comuna_list.html', {'comunas': comunas})
+
+def comuna_create(request):
+    if request.method == "POST":
+        form = ComunaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('comuna_list')
+    else:
+        form = ComunaForm()
+    return render(request, 'administracion/ubicacion/comuna_form.html', {'form': form})
+
+def comuna_update(request, pk):
+    comuna = get_object_or_404(Comuna, pk=pk)
+    if request.method == "POST":
+        form = ComunaForm(request.POST, instance=comuna)
+        if form.is_valid():
+            form.save()
+            return redirect('comuna_list')
+    else:
+        form = ComunaForm(instance=comuna)
+    return render(request, 'administracion/ubicacion/comuna_form.html', {'form': form})
+
+def comuna_delete(request, pk):
+    comuna = get_object_or_404(Comuna, pk=pk)
+    if request.method == "POST":
+        comuna.delete()
+        return redirect('comuna_list')
+    return render(request, 'administracion/ubicacion/comuna_confirm_delete.html', {'object': comuna})

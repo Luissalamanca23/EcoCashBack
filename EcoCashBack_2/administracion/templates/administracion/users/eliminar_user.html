@@ -27,18 +27,43 @@
                         <ul class="dropdown-menu" aria-labelledby="eventosDropdown">
                             <li><a class="dropdown-item" href="{% url 'listar_evento' %}">Listar</a></li>
                             <li><a class="dropdown-item" href="{% url 'agregar_evento' %}">Agregar</a></li>
+
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="eventosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="newsletterDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Newsletter
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="eventosDropdown">
+                        <ul class="dropdown-menu" aria-labelledby="newsletterDropdown">
                             <li><a class="dropdown-item" href="{% url 'listar_newsletter' %}">Listar</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'listar_users' %}">Usuarios</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Usuarios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
+                            <li><a class="dropdown-item" href="{% url 'listar_users' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'agregar_usuario' %}">Agregar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="regionesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Regiones
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="regionesDropdown">
+                            <li><a class="dropdown-item" href="{% url 'region_list' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'region_create' %}">Agregar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="comunasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Comunas
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="comunasDropdown">
+                            <li><a class="dropdown-item" href="{% url 'comuna_list' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'comuna_create' %}">Agregar</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Configuraciones</a>

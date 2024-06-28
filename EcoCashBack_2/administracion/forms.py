@@ -2,7 +2,17 @@ from django import forms
 from .models import Evento
 from .models import Usuario
 from .models import Newsletter
+from .models import Region, Comuna
 
+class RegionForm(forms.ModelForm):
+    class Meta:
+        model = Region
+        fields = ['nombre']
+
+class ComunaForm(forms.ModelForm):
+    class Meta:
+        model = Comuna
+        fields = ['nombre', 'region']
 
 class NewsletterForm(forms.ModelForm):
     class Meta:
