@@ -27,7 +27,6 @@
                         <ul class="dropdown-menu" aria-labelledby="eventosDropdown">
                             <li><a class="dropdown-item" href="{% url 'listar_evento' %}">Listar</a></li>
                             <li><a class="dropdown-item" href="{% url 'agregar_evento' %}">Agregar</a></li>
-
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -91,6 +90,10 @@
             <div class="form-group">
                 <label for="id_contraseña">Contraseña:</label>
                 {{ form.contraseña }}
+            </div>
+            <div class="form-group">
+                <label for="id_confirmar_contraseña">Confirmar Contraseña:</label>
+                {{ form.confirmar_contraseña }}
             </div>
             <div class="form-group">
                 <label for="id_rol">Rol:</label>
