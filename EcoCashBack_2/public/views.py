@@ -4,7 +4,6 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.views.decorators.csrf import csrf_exempt
 from administracion.models import Newsletter
 from administracion.models import Evento
 from administracion.models import Usuario
@@ -47,36 +46,29 @@ def agregar_suscripcion(request):
 def admin_dashboard(request):
     return render(request, 'administrarador/admin.html')
 
-def user_login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('index')
-            else:
-                form.add_error(None, "Credenciales incorrectas")
-    else:
-        form = AuthenticationForm()
-    return render(request, 'registration/login.html', {'form': form})
 
+@login_required
+def perfil(request):
+    return render(request, 'perfil.html')
 
 def registro(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST)
         if form.is_valid():
-            usuario = form.save(commit=False)
-            rol_usuario = Rol.objects.get(nombre="Usuario")
-            usuario.rol = rol_usuario
-            form.save()
+            user = form.save()
+            user.refresh_from_db()
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=raw_password)
+            login(request, user)
             return redirect('index')
     else:
         form = RegistroForm()
     return render(request, 'registration/registro.html', {'form': form})
 
+def logout_view(request):
+    auth_logout(request)
+    return redirect('index')
 
 def contacto(request):
     return render(request, 'contactanos.html')
@@ -84,11 +76,3 @@ def contacto(request):
 def servicios(request):
     return render(request, 'servicios.html')
 
-
-@login_required
-def perfil(request):
-    return render(request, 'perfil.html')
-
-def user_logout(request):
-    logout(request)
-    return redirect('index')

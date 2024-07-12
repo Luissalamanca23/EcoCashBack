@@ -116,7 +116,6 @@ def agregar_usuario(request):
         form = UsuarioForm()
     return render(request, 'administracion/users/agregar_user.html', {'form': form})
 
-@role_required('Administrador')
 def eliminar_users(request, pk):
     usuario = get_object_or_404(Usuario, pk=pk)
     if request.method == 'POST':

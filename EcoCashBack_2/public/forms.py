@@ -19,25 +19,9 @@ class LoginForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
     contraseña = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
-class RegistroForm(forms.ModelForm):
-    contraseña = forms.CharField(widget=forms.PasswordInput)
-    confirmar_contraseña = forms.CharField(widget=forms.PasswordInput)
+class RegistroForm(UserCreationForm):
+    email = forms.EmailField(required=True)
 
     class Meta:
-        model = Usuario
-        fields = ['nombre', 'email', 'contraseña']
-
-    def clean_confirmar_contraseña(self):
-        contraseña = self.cleaned_data.get('contraseña')
-        confirmar_contraseña = self.cleaned_data.get('confirmar_contraseña')
-        if contraseña and confirmar_contraseña and contraseña != confirmar_contraseña:
-            raise forms.ValidationError("Las contraseñas no coinciden")
-        return confirmar_contraseña
-
-    def save(self, commit=True):
-        usuario = super().save(commit=False)
-        usuario.contraseña = self.cleaned_data['contraseña']
-        if commit:
-            usuario.save()
-        return usuario
-
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
