@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 from .views import (
     region_list, region_create, region_update, region_delete,
-    comuna_list, comuna_create, comuna_update, comuna_delete
+    comuna_list, comuna_create, comuna_update, comuna_delete,
+    listar_users, modificar_users, eliminar_users, agregar_usuario
 )
 from public.views import index, agregar_suscripcion, contacto, servicios
 
