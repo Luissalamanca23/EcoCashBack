@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from administracion.models import Newsletter
@@ -11,7 +11,8 @@ from administracion.models import Usuario
 from administracion.models import Rol
 from administracion.models import Newsletter, Evento
 from administracion.forms import NewsletterForm
-
+from .forms import RegistroForm
+from django.contrib.auth.forms import AuthenticationForm
 from .forms import NewsletterForm
 from .forms import LoginForm
 from .forms import EventoForm
@@ -20,27 +21,14 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 def index(request):
-    eventos = Evento.objects.all()
+    eventos = Evento.objects.order_by('-fecha')[:2]
     return render(request, 'inicio.html', {'eventos': eventos})
 
 
 def nosotros(request):
     return render(request, 'sobre-nosotros.html')
 
-def inicio(request0):
-    return render(request0, 'inicio.html')
 
-
-
-
-
-
-# eventos ecocashback 
-
-def mostrar(request):
-    # Ordena los eventos por fecha de manera descendente y toma los últimos 2
-    eventos = Evento.objects.order_by('-fecha')[:2]
-    return render(request, 'public/inicio.html', {'eventos': eventos})
 
 @csrf_exempt
 def agregar_suscripcion(request):
@@ -54,39 +42,41 @@ def agregar_suscripcion(request):
     return redirect('listar_evento')
 
 
-def verificar_usuario(request):
-    try:
-        if request.user.is_authenticated:
-            usuario_val = Usuario.objects.get(email=request.user.email)
-        if usuario_val.rol.nombre == 'Administrador':
-            return redirect('admin_dashboard')
-        else:
-            return redirect('user_dashboard')
-    except Usuario.DoesNotExist:
-        # Maneja el error cuando el usuario no existe
-        usuario_val = None
-        return redirect('login')
-        print("Usuario no encontrado")
-    
 
-
-
-def user_dashboard(request):
-    return render(request, 'user.html')
 
 def admin_dashboard(request):
     return render(request, 'administrarador/admin.html')
 
-
-def create_user(request):
+def user_login(request):
     if request.method == 'POST':
-        form = UsuarioForm(request.POST)
+        form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('listar_users')
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index')
+            else:
+                form.add_error(None, "Credenciales incorrectas")
     else:
-        form = UsuarioForm()
-    return render(request, 'public/users/agregar_user.html', {'form': form})
+        form = AuthenticationForm()
+    return render(request, 'registration/login.html', {'form': form})
+
+
+def registro(request):
+    if request.method == 'POST':
+        form = RegistroForm(request.POST)
+        if form.is_valid():
+            usuario = form.save(commit=False)
+            rol_usuario = Rol.objects.get(nombre="Usuario")
+            usuario.rol = rol_usuario
+            form.save()
+            return redirect('index')
+    else:
+        form = RegistroForm()
+    return render(request, 'registration/registro.html', {'form': form})
+
 
 def contacto(request):
     return render(request, 'contactanos.html')
@@ -94,3 +84,11 @@ def contacto(request):
 def servicios(request):
     return render(request, 'servicios.html')
 
+
+@login_required
+def perfil(request):
+    return render(request, 'perfil.html')
+
+def user_logout(request):
+    logout(request)
+    return redirect('index')

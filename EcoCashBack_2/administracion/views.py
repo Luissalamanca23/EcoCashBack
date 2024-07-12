@@ -1,15 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Evento
-from .forms import EventoForm
-from .models import Newsletter
-from .models import Usuario 
-from .models import Rol
-from .models import Region, Comuna
-from .forms import RegionForm, ComunaForm
-from .forms import EventoForm, UsuarioForm
-from .forms import NewsletterForm
+from .models import Evento, Newsletter, Usuario, Rol, Region, Comuna
+from .forms import EventoForm, UsuarioForm, NewsletterForm, RegionForm, ComunaForm
+from .decorators import role_required
 from django.views.decorators.csrf import csrf_exempt
 
+
+@role_required('Administrador')
 def agregar_evento(request):
     if request.method == 'POST':
         form = EventoForm(request.POST)
@@ -20,12 +16,14 @@ def agregar_evento(request):
         form = EventoForm()
     return render(request, 'administracion/eventos/agregar_evento.html', {'form': form})
 
+
+@role_required('Administrador')
 def listar_evento(request):
     eventos = Evento.objects.all()
     return render(request, 'administracion/eventos/listar_eventos.html', {'eventos': eventos})
 
 
-@csrf_exempt
+@role_required('Administrador')
 def agregar_suscripcion(request):
     if request.method == 'POST':
         form = NewsletterForm(request.POST)
@@ -36,7 +34,7 @@ def agregar_suscripcion(request):
             return render(request, 'inicio.html', {'eventos': Evento.objects.all(), 'message': 'Por favor, ingresa un email válido.'})
     return redirect('listar_evento')
 
-
+@role_required('Administrador')
 def modificar_evento(request, pk):
     evento = get_object_or_404(Evento, pk=pk)
     if request.method == 'POST':
@@ -48,6 +46,7 @@ def modificar_evento(request, pk):
         form = EventoForm(instance=evento)
     return render(request, 'administracion/eventos/modificar_evento.html', {'form': form})
 
+@role_required('Administrador')
 def eliminar_evento(request, pk):
     evento = get_object_or_404(Evento, pk=pk)
     if request.method == 'POST':
@@ -55,15 +54,19 @@ def eliminar_evento(request, pk):
         return redirect('listar_eventos')
     return render(request, 'administracion/eventos/eliminar_evento.html', {'evento': evento})
 
-
+@role_required('Administrador')
 def admin_dashboard(request):
+    request.session['admin'] = True
+    request.session['usuario'] = 'admin'
+    usuario = request.session['usuario']
     return render(request, 'administracion/admin.html')
 
-
+@role_required('Administrador')
 def listar_newsletter(request):
     newsletters = Newsletter.objects.all()
     return render(request, 'administracion/newsletter/listar_news.html', {'newsletters': newsletters})
 
+@role_required('Administrador')
 def eliminar_newsletter(request, pk):
     newsletter = get_object_or_404(Newsletter, pk=pk)
     if request.method == 'POST':
@@ -71,6 +74,7 @@ def eliminar_newsletter(request, pk):
         return redirect('listar_newsletter')
     return render(request, 'administracion/newsletter/eliminar_news.html', {'newsletter': newsletter})
 
+@role_required('Administrador')
 def modificar_newsletter(request, pk):
     newsletter = get_object_or_404(Newsletter, pk=pk)
     if request.method == 'POST':
@@ -83,8 +87,8 @@ def modificar_newsletter(request, pk):
     return render(request, 'administracion/newsletter/modificar_news.html', {'form': form})
 
 def listar_users(request):
-    usuario = Usuario.objects.all()
-    return render(request, 'administracion/users/listar_users.html', {'usuario': usuario})
+    usuarios = Usuario.objects.all()
+    return render(request, 'administracion/users/listar_users.html', {'usuarios': usuarios})
 
 def modificar_users(request, pk):
     usuario = get_object_or_404(Usuario, pk=pk)
@@ -103,13 +107,16 @@ def agregar_usuario(request):
         form = UsuarioForm(request.POST)
         if form.is_valid():
             usuario = form.save(commit=False)
-            usuario.set_password(form.cleaned_data['contraseña'])
+            # Asignar rol de usuario por defecto si no se selecciona otro
+            if not usuario.rol:
+                usuario.rol = Rol.objects.get(nombre='usuario')  # Asegúrate de que el rol 'usuario' existe
             usuario.save()
             return redirect('listar_users')
     else:
         form = UsuarioForm()
     return render(request, 'administracion/users/agregar_user.html', {'form': form})
 
+@role_required('Administrador')
 def eliminar_users(request, pk):
     usuario = get_object_or_404(Usuario, pk=pk)
     if request.method == 'POST':
@@ -117,14 +124,12 @@ def eliminar_users(request, pk):
         return redirect('listar_users')
     return render(request, 'administracion/users/eliminar_user.html', {'usuario': usuario})
 
-
-
-
-# Vistas para Region
+@role_required('Administrador')
 def region_list(request):
     regiones = Region.objects.all()
     return render(request, 'administracion/ubicacion/region_list.html', {'regiones': regiones})
 
+@role_required('Administrador')
 def region_create(request):
     if request.method == "POST":
         form = RegionForm(request.POST)
@@ -135,6 +140,7 @@ def region_create(request):
         form = RegionForm()
     return render(request, 'administracion/ubicacion/region_form.html', {'form': form})
 
+@role_required('Administrador')
 def region_update(request, pk):
     region = get_object_or_404(Region, pk=pk)
     if request.method == "POST":
@@ -146,6 +152,7 @@ def region_update(request, pk):
         form = RegionForm(instance=region)
     return render(request, 'administracion/ubicacion/region_form.html', {'form': form})
 
+@role_required('Administrador')
 def region_delete(request, pk):
     region = get_object_or_404(Region, pk=pk)
     if request.method == "POST":
@@ -153,11 +160,12 @@ def region_delete(request, pk):
         return redirect('region_list')
     return render(request, 'administracion/ubicacion/region_confirm_delete.html', {'object': region})
 
-# Vistas para Comuna
+@role_required('Administrador')
 def comuna_list(request):
     comunas = Comuna.objects.all()
     return render(request, 'administracion/ubicacion/comuna_list.html', {'comunas': comunas})
 
+@role_required('Administrador')
 def comuna_create(request):
     if request.method == "POST":
         form = ComunaForm(request.POST)
@@ -168,6 +176,7 @@ def comuna_create(request):
         form = ComunaForm()
     return render(request, 'administracion/ubicacion/comuna_form.html', {'form': form})
 
+@role_required('Administrador')
 def comuna_update(request, pk):
     comuna = get_object_or_404(Comuna, pk=pk)
     if request.method == "POST":
@@ -179,6 +188,7 @@ def comuna_update(request, pk):
         form = ComunaForm(instance=comuna)
     return render(request, 'administracion/ubicacion/comuna_form.html', {'form': form})
 
+@role_required('Administrador')
 def comuna_delete(request, pk):
     comuna = get_object_or_404(Comuna, pk=pk)
     if request.method == "POST":
