@@ -3,12 +3,78 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Perfil</title>
+    <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <h2>Perfil de Usuario</h2>
-    <p>Nombre de usuario: {{ user.username }}</p>
-    <p>Email: {{ user.email }}</p>
+    <div class="container mt-5">
+        <h2 class="text-center">Perfil de Usuario</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        Información Personal
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Nombre de usuario:</strong> {{ user.username }}</p>
+                        <p><strong>Email:</strong> {{ user.email }}</p>
+                        <p><strong>Fecha de Registro:</strong> {{ user.usuario.fecha_registro }}</p>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Residuos
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {% for residuo in residuos %}
+                                <li>{{ residuo.tipo_residuo }} - {{ residuo.peso }} kg - {{ residuo.estado }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Puntos
+                    </div>
+                    <div class="card-body">
+                        <p>Total Puntos: {{ puntos.puntos }}</p>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Actividades Recientes
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {% for log in logs %}
+                                <li>{{ log.fecha }} - {{ log.actividad }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Direcciones
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {% for direccion in direcciones %}
+                                <li>{{ direccion.direccion }} - {{ direccion.ciudad }} - {{ direccion.comuna.nombre }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-HOQm0DNJtBnv2D1M8UVGLDztAi5HhP9oa8P+FZBUfEg=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
