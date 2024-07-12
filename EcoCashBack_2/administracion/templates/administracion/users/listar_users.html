@@ -95,8 +95,8 @@
                     <td>{{ usuario.fecha_registro }}</td>
                     <td>{{ usuario.rol.nombre }}</td>
                     <td>
-                        <a href="{% url 'modificar_users' usuario.pk %}" class="btn-modificar">Modificar</a>
-                        <a href="{% url 'eliminar_users' usuario.pk %}" class="btn btn-danger">Eliminar</a>
+                        <a href="{% url 'modificar_usuario' usuario.pk %}" class="btn-modificar">Modificar</a>
+                        <a href="{% url 'eliminar_usuario' usuario.pk %}" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
                 {% endfor %}

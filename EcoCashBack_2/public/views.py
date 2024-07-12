@@ -4,11 +4,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from administracion.models import Newsletter
-from administracion.models import Evento
-from administracion.models import Usuario
-from administracion.models import Rol
-from administracion.models import Newsletter, Evento
+from administracion.models import Newsletter,Evento, Usuario, Residuo, Punto, Newsletter, LogActividad, Direccion, Rol
 from administracion.forms import NewsletterForm
 from .forms import RegistroForm
 from django.contrib.auth.forms import AuthenticationForm
@@ -16,7 +12,7 @@ from .forms import NewsletterForm
 from .forms import LoginForm
 from .forms import EventoForm
 import json
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 
 def index(request):
@@ -49,7 +45,28 @@ def admin_dashboard(request):
 
 @login_required
 def perfil(request):
-    return render(request, 'perfil.html')
+    user = request.user
+    try:
+        usuario = Usuario.objects.get(email=user.email)
+    except Usuario.DoesNotExist:
+        usuario = None
+
+    if usuario:
+        eventos = Evento.objects.filter(usuario=usuario)
+        puntos = Punto.objects.filter(usuario=usuario).first()
+        logs = LogActividad.objects.filter(usuario=usuario)
+        direcciones = Direccion.objects.filter(usuario=usuario)
+    
+        context = { 
+            'user': user,
+            'residuos': residuos,
+            'puntos': puntos,
+            'logs': logs,
+            'direcciones': direcciones
+        }
+        return render(request, 'perfil.html', context)
+    else:
+        return render(request, 'perfil.html', {'error': 'Usuario no encontrado'})
 
 def registro(request):
     if request.method == 'POST':
